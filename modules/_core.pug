@@ -1,0 +1,16 @@
+include ./head/_head
+include ./content/_content
+
+include ./_sidebar
+include ./_plugins
+include ./_menu
+include ./_search-modal
+
+
+doctype html
+html(lang='en')
+  head
+    block head
+  body
+    block body
+  +plugins()

@@ -1,0 +1,92 @@
+mixin sidebar()
+  nav.navbar.navbar__vertical.navbar-expand-md.navbar-light
+    .container-fluid
+      .logo
+        a.navbar-brand
+          img.navbar-brand__img(src="./images/logo.svg")
+      button.navbar-toggler.collapsed.d-md-none(
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarContent"
+        aria-controls="navbarContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      )
+        span.navbar-toggler-icon
+      .user.d-md-none
+        .dropdown
+          a#sidebarAvatar.dropdown-toggle(
+            role="button"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          )
+            .user__avatar.user__avatar--sm
+              img.user__img
+          .dropdown-menu.dropdown-menu-right(
+            aria-labelledby="sidebarAvatar"
+          )
+            each val, index in ["Profile", "Settings", "Logout"]
+              a.dropdown-item(
+                href= "#"
+              )= val
+      //- navbar collapse
+      .collapse.navbar-collapse#navbarContent
+        form.form-search.d-md-none(action="#")
+            .input-group
+              .input-group-prepend
+                .input-group-text
+                  i.fe.fe-search
+              input.form-control(
+                type="text"
+                placeholder="Username"
+                aria-label="Username"
+                aria-describedby="basic-addon1"
+              )
+        +menu({mainMenu : mainMenus})
+        hr.navbar-devider.my-3
+        h6.navbar__heading Documentation
+        +documentMenu({mainMenu : documentationMenu})
+        .mt-auto
+        .customize-action
+            a.btn.btn-block.btn-primary(
+              data-toggle="modal"
+              href="#customizeModal"
+            )
+              i.fe.fe-sliders
+              | Customize
+        .navbar__user
+          .notify-action
+            a.btn.btn-block(
+              data-toggle="modal"
+              href="#notifyModal"
+            )
+              span
+                i.fe.fe-bell
+          .user
+            .dropup
+              a#sidebarAvatarUp.dropdown-toggle(
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              )
+                .user__avatar.user__avatar--sm.user__avatar--online
+                  img.user__img(
+                    src= "./images/avatar-1.jpg"
+                  )
+              .dropdown-menu(
+                aria-labelledby="sidebarAvatarUp"
+              )
+                a.dropdown-item(href= "#") Profile
+                a.dropdown-item(href= "#") Setting
+                hr.dropdown-devider
+                a.dropdown-item(href= "#") Layout
+          .search-action
+            a.btn.btn-block(
+              data-toggle="modal"
+              data-target="#sidebarModalSearch"
+            )
+              span
+                i.fe.fe-search
+            

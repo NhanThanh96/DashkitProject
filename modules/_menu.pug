@@ -1,0 +1,460 @@
+-
+  var mainMenus = [
+    {
+      name : "Dashboards",
+      url : "sidebarDashboards",
+      isShow : true,
+      icon : "fe fe-home",
+      secondLevelMenu : [
+        {
+          name  : "Default",
+          url : "#"
+        },
+        {
+          name  : "Alternative",
+          url : "#",
+          isActive : true,
+          badge : {
+            content : "New",
+            badgeClass : "badge-success"
+          }
+        }
+      ]
+    },
+    {
+      name : "Pages",
+      url : "sidebarPages",
+      icon : "fe fe-file",
+      secondLevelMenu : [
+        {
+          name  : "Profile",
+          url : "sidebarProfile",
+          thirdLevelMenu  : [
+            {
+              name  : "Posts",
+              url : "#"
+            },
+            {
+              name  : "Groups",
+              url : "#"
+            },
+            {
+              name  : "Projects",
+              url : "#"
+            },
+            {
+              name  : "Files",
+              url : "#"
+            },
+            {
+              name  : "Subscribers",
+              url : "#"
+            }
+          ]
+        },
+        {
+          name  : "Project",
+          url : "sidebarProject",
+          thirdLevelMenu  : [
+            {
+              name  : "Overview",
+              url : "#"
+            },
+            {
+              name  : "Files",
+              url : "#"
+            },
+            {
+              name  : "Reports",
+              url : "#"
+            },
+            {
+              name  : "New project",
+              url : "#"
+            }
+          ]
+        },
+        {
+          name  : "Team",
+          url : "sidebarTeam",
+          thirdLevelMenu  : [
+            {
+              name  : "Orders",
+              url : "#"
+            },
+            {
+              name  : "Feed",
+              url : "#"
+            },
+            {
+              name  : "Settings",
+              url : "#"
+            },
+            {
+              name  : "Invoice",
+              url : "#"
+            },
+            {
+              name  : "Pricing",
+              url : "#"
+            }
+          ]
+        },
+        {
+          name  : "Orders",
+          url : "#"
+        },
+        {
+          name  : "Feed",
+          url : "#"
+        },
+        {
+          name  : "Settings",
+          url : "#"
+        },
+        {
+          name  : "Invoice",
+          url : "#"
+        },
+        {
+          name  : "Pricing",
+          url : "#"
+        }
+      ]
+    },
+    {
+      name : "Authentication",
+      url : "sidebarAuth",
+      icon : "fe fe-user",
+      secondLevelMenu : [
+        {
+          name  : "Sign in",
+          url : "sidebarSignIn",
+          thirdLevelMenu  : [
+            {
+              name  : "Cover",
+              url : "#"
+            },
+            {
+              name  : "Illustration",
+              url : "#"
+            },
+            {
+              name  : "Basic",
+              url : "#"
+            }
+          ]
+        },
+        {
+          name  : "Sign up",
+          url : "sidebarSignUp",
+          thirdLevelMenu  : [
+            {
+              name  : "Cover",
+              url : "#"
+            },
+            {
+              name  : "Illustration",
+              url : "#"
+            },
+            {
+              name  : "Basic",
+              url : "#"
+            }
+          ]
+        },
+        {
+          name  : "Password reset",
+          url : "sidebarPassword",
+          thirdLevelMenu  : [
+            {
+              name  : "Cover",
+              url : "#"
+            },
+            {
+              name  : "Illustration",
+              url : "#"
+            },
+            {
+              name  : "Basic",
+              url : "#"
+            }
+          ]
+        },
+        {
+          name  : "Error",
+          url : "sidebarError",
+          thirdLevelMenu  : [
+            {
+              name  : "Illustration",
+              url : "#"
+            },
+            {
+              name  : "Basic",
+              url : "#"
+            }
+          ]
+        },
+      ]
+    }
+  ]
+
+-
+  var documentationMenu = [
+    {
+      name : "Getting started",
+      url : "#",
+      icon : "fe fe-clipboard"
+    },
+    {
+      name : "Components",
+      url : "sidebarComponents",
+      icon : "fe fe-book-open",
+      secondLevelMenu : [
+        {
+          name : "Alerts",
+          url : "#"
+        },
+        {
+          name : "Avatars",
+          url : "#"
+        },
+        {
+          name : "Badges",
+          url : "#"
+        },
+        {
+          name : "Breadcrumb",
+          url : "#"
+        },
+        {
+          name : "Buttons",
+          url : "#"
+        },
+        {
+          name : "Button group",
+          url : "#"
+        },
+        {
+          name : "Cards",
+          url : "#"
+        },
+        {
+          name : "Charts",
+          url : "#"
+        },
+        {
+          name : "Dropdowns",
+          url : "#"
+        },
+        {
+          name : "Forms",
+          url : "#"
+        },
+        {
+          name : "Icons",
+          url : "#"
+        },
+        {
+          name : "Lists",
+          url : "#"
+        },
+        {
+          name : "Modal",
+          url : "#"
+        },
+        {
+          name : "Navs",
+          url : "#"
+        },
+        {
+          name : "Navbar",
+          url : "#"
+        },
+        {
+          name : "Page headers",
+          url : "#"
+        },
+        {
+          name : "Pagination",
+          url : "#"
+        },
+        {
+          name : "Popovers",
+          url : "#"
+        },
+        {
+          name : "Progress",
+          url : "#"
+        },
+        {
+          name : "Social post",
+          url : "#"
+        },
+        {
+          name : "Spinners",
+          url : "#"
+        },
+        {
+          name : "Tables",
+          url : "#"
+        },
+        {
+          name : "Toasts",
+          url : "#"
+        },
+        {
+          name : "Tooltips",
+          url : "#"
+        },
+        {
+          name : "Typography",
+          url : "#"
+        },
+        {
+          name : "Utitities",
+          url : "#"
+        }
+      ]
+    },
+    {
+      name : "Changelog",
+      url : "#",
+      icon : "fe fe-git-branch",
+      badge : {
+        content : "v1.3.4",
+        badgeClass : "badge-primary"
+      }
+    }
+  ]
+
+mixin menu({mainMenu})
+  ul.navbar-nav
+    each val in mainMenu
+      li.nav-item
+        if val.secondLevelMenu
+          a.nav-link(
+            href= "#" + val.url
+            data-toggle="collapse"
+            role="button"
+            aria-expanded="false"
+            aria-controls= val.url
+            class= val.secondLevelMenu ? "submenu" : ""
+            class= val.isActive ? "active" : ""
+          )
+            if val.icon
+              i(
+                class= val.icon
+              )
+              |#{val.name}
+          .collapse(
+            class= val.isShow ? "show" : ""
+            id= val.url
+          )
+            ul.nav.flex-column
+              each secondLevel in val.secondLevelMenu
+                li.nav-item
+                  if secondLevel.thirdLevelMenu
+                    a.nav-link(
+                      href= "#" + secondLevel.url
+                      data-toggle="collapse"
+                      role="button"
+                      aria-expanded="false"
+                      aria-controls= secondLevel.url
+                    )= secondLevel.name
+                    .collapse(
+                      id= secondLevel.url
+                    )
+                      ul.nav.flex-column
+                        each thirdLevel in secondLevel.thirdLevelMenu
+                          li.nav-item
+                            a.nav-link(
+                              href= thirdLevel.url
+                            )= thirdLevel.name
+                  else
+                    a.nav-link(
+                      href= secondLevel.url
+                      class= secondLevel.isActive ? "active" : ""
+                    )= secondLevel.name
+                      if secondLevel.badge
+                        span.badge.ml-auto(
+                          class= secondLevel.badge.badgeClass
+                        )= secondLevel.badge.content
+        else
+          a.nav-link(
+            href= "#" + val.url
+          )
+            if val.icon
+              i(
+                class= val.icon
+              )
+              |#{val.name}
+            if val.badge
+                        span.badge.ml-auto(
+                          class= val.badge.badgeClass
+                        )= val.badge.content
+
+mixin documentMenu({mainMenu})
+  ul.navbar-nav.mb-md-4
+    each val in mainMenu
+      li.nav-item
+        if val.secondLevelMenu
+          a.nav-link(
+            href= "#" + val.url
+            data-toggle="collapse"
+            role="button"
+            aria-expanded="false"
+            aria-controls= val.url
+            class= val.secondLevelMenu ? "submenu" : ""
+          )
+            if val.icon
+              i(
+                class= val.icon
+              )
+              |#{val.name}
+          .collapse(
+            class= val.isShow ? "show" : ""
+            id= val.url
+          )
+            ul.nav.flex-column
+              each secondLevel in val.secondLevelMenu
+                li.nav-item
+                  if secondLevel.thirdLevelMenu
+                    a.nav-link(
+                      href= "#" + secondLevel.url
+                      data-toggle="collapse"
+                      role="button"
+                      aria-expanded="false"
+                      aria-controls= secondLevel.url
+                    )= secondLevel.name
+                    .collapse(
+                      id= secondLevel.url
+                    )
+                      ul.nav.flex-column
+                        each thirdLevel in secondLevel.thirdLevelMenu
+                          li.nav-item
+                            a.nav-link(
+                              href= thirdLevel.url
+                            )= thirdLevel.name
+                  else
+                    a.nav-link(
+                      href= secondLevel.url
+                      class= secondLevel.isActive ? "active" : ""
+                    )= secondLevel.name
+                      if secondLevel.badge
+                        span.badge.ml-auto(
+                          class= secondLevel.badge.badgeClass
+                        )= secondLevel.badge.content
+        else
+          a.nav-link(
+            href= "#" + val.url
+          )
+            if val.icon
+              i(
+                class= val.icon
+              )
+              |#{val.name}
+            if val.badge
+                        span.badge.ml-auto(
+                          class= val.badge.badgeClass
+                        )= val.badge.content
