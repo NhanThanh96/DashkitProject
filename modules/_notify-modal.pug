@@ -1,0 +1,73 @@
+mixin notify-modal()
+  .modal.fade#notifyModal(
+    tabindex="-1"
+    role="dialog"
+    aria-modal="true"
+  )
+    .modal-dialog.modal-dialog--vertical( role="document")
+      .modal-content.notify
+        .modal-header
+          h4.modal-title Notifications
+          button.close(
+              data-dismiss="modal"
+              aria-label="Close"
+            )
+            .span( aria-hidden="true") ×
+        .modal-body
+          .list-group.list-group-flush
+            -
+              var notifyList = [
+                {
+                  imgUrl : "./images/avatar-1.jpg",
+                  notify : "<strong class='text-body'>Dianna Smiley</strong> shared your post with <strong class='text-body'>Ab Hadley</strong>, <strong class='text-body'>Adolfo Hess</strong>, and <strong class='text-body'>3 others</strong>.",
+                  time : "2m"
+                },
+                {
+                  imgUrl : "./images/avatar-2.jpg",
+                  notify : "<strong class='text-body'>Ab Hadley</strong> reacted to your post with a 😍",
+                  time : "2m"
+                },
+                {
+                  imgUrl : "./images/avatar-3.jpg",
+                  notify : "<strong class='text-body'>Adolfo Hess</strong> commented <blockquote class='text-body'>“I don’t think this really makes sense to do without approval from Johnathan since he’s the one...” </blockquote>",
+                  time : "2m"
+                },
+                {
+                  imgUrl : "./images/avatar-4.jpg",
+                  notify : "<strong class='text-body'>Daniela Dewitt</strong> subscribed to you.",
+                  time : "2m"
+                },
+                {
+                  imgUrl : "./images/avatar-5.jpg",
+                  notify : "<strong class='text-body'>Miyah Myles</strong> shared your post with <strong class='text-body'>Ryu Duke</strong>, <strong class='text-body'>Glen Rouse</strong>, and <strong class='text-body'>3 others</strong>.",
+                  time : "2m"
+                },
+                {
+                  imgUrl : "./images/avatar-6.jpg",
+                  notify : "<strong class='text-body'>Ryu Duke</strong> reacted to your post with a 😍",
+                  time : "2m"
+                },
+                {
+                  imgUrl : "./images/avatar-7.jpg",
+                  notify : "<strong class='text-body'>Glen Rouse</strong> commented <blockquote class='text-body'>“I don’t think this really makes sense to do without approval from Johnathan since he’s the one...” </blockquote>",
+                  time : "2m"
+                },
+                {
+                  imgUrl : "./images/avatar-8.jpg",
+                  notify : "<strong class='text-body'>Grace Gross</strong> subscribed to you.",
+                  time : "2m"
+                }
+              ]
+            each val in notifyList
+              a.list-group-item
+                .row
+                  .col-auto
+                    .notify__avatar
+                      img.notify__img(
+                        src= val.imgUrl
+                        alt="avatar"
+                      )
+                  .col.notify__inner
+                    .notify__info !{val.notify}
+                  .col-auto
+                    small.notify__time= val.time

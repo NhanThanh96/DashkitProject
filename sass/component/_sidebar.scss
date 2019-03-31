@@ -107,8 +107,9 @@
           font-size: 10px;
           text-transform: uppercase;
           letter-spacing: 0.64px;
-          color: #95aac9;
-              margin-bottom: 9px;
+          font-weight: $fw-medium;
+          color: lighten( $cl-gray, 10%);
+          margin-bottom: 9px;
       }
       .customize-action {
           margin-bottom: 24px;
@@ -117,6 +118,13 @@
               padding: 8px 12px;
               background-color: $cl-dark-blue;
               border-color: $cl-dark-blue;
+              transition: background-color .3s;
+              &:hover {
+                background-color: darken($cl-dark-blue, 10%);
+              }
+              &:focus {
+                box-shadow: 0 0 0 0.15rem rgba(76,143,233,.5);
+              }
           }
           .fe {
               margin-right: 6.08px;
@@ -159,7 +167,7 @@
                               height: 0;
                             margin: 12px 0;
                             overflow: hidden;
-                            border-top: 1px solid #edf2f9;
+                            border-top: 1px solid $cl-light-white;
                       }
                   }
               }
@@ -254,14 +262,18 @@
 .badge {
   display: inline-block;
   vertical-align: middle;
-  padding: 3.68px 6.4px;
-  border-radius: 6;
-  line-height: 1.3;
+  border-radius: 6px;
+  line-height: 1.2;
   font-weight: 300;
   &.badge-success {
-      color: #00d97e;
-      background-color: #ccf7e5;
+      color: $cl-light-green;
+      background-color: lighten($cl-light-green, 45%);
   }
+  &.badge-primary {
+    color: $cl-white;
+    background-color: $cl-dark-blue;
+  }
+
 }
 .main-content {
   margin-left: 250px;

@@ -22,9 +22,9 @@ $font-family-cerebri-san: "Cerebri Sans",sans-serif;
 // $lh-xsmall
 
 // ==== font-weight ====
-// $fw-regular
-// $fw-medium
-// $fw-bold
+$fw-regular : 400;
+$fw-medium : 500;
+$fw-bold : 600;
 
 // ==== color ====
 $cl-white : #fff;
@@ -33,6 +33,7 @@ $cl-gray : #6e84a3;
 $cl-dark-gray : #12263f;
 $cl-dark-blue : #2c7be5;
 $cl-green : rgb(0, 217, 126);
+$cl-light-green : #00d97e;
 
 // --indigo: #727cf5;
 // --purple: #6b5eae;

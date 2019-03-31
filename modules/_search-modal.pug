@@ -1,5 +1,4 @@
 mixin search-modal()
-  //- search model
   .modal.fade.search#sidebarModalSearch(
     tabindex="-1"
     role="dialog"
@@ -9,75 +8,95 @@ mixin search-modal()
       role="document"
     )
       .modal-content
-        .modal-body
-          form.search__form
-            .input-group
+        .modal-body.search
+          form.mb-3.search__form
+            .input-group.input-group--merge
+              input.form-control.search__input(
+                type= "search"
+                placeholder="Search"
+              )
               .input-group-prepend
                 span.input-group-text
                   i.fe.fe-search
-              input.form-control.search__input(
-                type= "text"
-                placeholder="Search"
-              )
           .search__content
             -
               var searchResult = [
                 {
                   image : "./images/team-logo-1.jpg",
                   title : "Airbnb",
-                  datetime : "Updated 2hr ago"
+                  datetime : "Updated 2hr ago",
+                  avatarShape : "square"
                 },
                 {
                   image : "./images/team-logo-2.jpg",
                   title : "Medium Corporation",
-                  datetime : "Updated 2hr ago"
+                  datetime : "Updated 2hr ago",
+                  avatarShape : "square"
                 },
                 {
                   image : "./images/project-1.jpg",
                   title : "Homepage Redesign",
-                  datetime : "Updated 4hr ago"
+                  datetime : "Updated 4hr ago",
+                  avatarShape : "rectangle"
                 },
                 {
                   image : "./images/project-2.jpg",
                   title : "Travels & Time",
-                  datetime : "Updated 4hr ago"
+                  datetime : "Updated 4hr ago",
+                  avatarShape : "rectangle"
                 },
                 {
                   image : "./images/project-3.jpg",
                   title : "Safari Exploration",
-                  datetime : "Updated 4hr ago"
+                  datetime : "Updated 4hr ago",
+                  avatarShape : "rectangle"
                 },
                 {
                   image : "./images/avatar-1.jpg",
                   title : "Dianna Smiley",
-                  isOnline : true
+                  isOnline : true,
+                  avatarShape : "circle"
                 },
                 {
                   image : "./images/avatar-2.jpg",
                   title : "Ab Hadley",
-                  isOnline : false
+                  isOffline : true,
+                  avatarShape : "circle"
                 }
               ]
-            .list-group.list-group-flush.search-content__list
+            .list-group.list-group-flush.search__list
               each val in searchResult
                 a.list-group-item
                   .row.align-items-center
-                    .col-auto
-                      .search-content__img
-                        img(
-                          src= val.image
-                          alt="avatar"
-                        )
-                    .col
-                      h4.search-content__title= val.title
-                      p.small.text-muted
+                    .col-auto.d-flex
+                      case val.avatarShape
+                        when "square"
+                          .search__avatar.search__avatar--square
+                            img.search__img(
+                              src= val.image
+                              alt="avatar"
+                            )
+                        when "rectangle"
+                          .search__avatar.search__avatar--rectangle
+                            img.search__img(
+                              src= val.image
+                              alt="avatar"
+                            )
+                        default
+                          .search__avatar.search__avatar--circle
+                            img.search__img(
+                              src= val.image
+                              alt="avatar"
+                            )
+                    .col.search__inner
+                      h4.search__title= val.title
+                      p.small.text-muted.mb-0.search__status
                         if val.datetime
                           i.fe.fe-clock
                           time(
                             datetime= "2018-05-24"
                           )= val.datetime
-                        if isOnline
-                          span.text-success
-                          | Online
-                        else
-                          span.text-danger
+                        if val.isOnline
+                          span.search__icon.search__icon--online Online
+                        if val.isOffline
+                          span.search__icon.search__icon--offline Offline

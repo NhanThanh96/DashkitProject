@@ -1,0 +1,89 @@
+mixin customize-modal()
+  .modal.fade#customizeModal(
+    tabindex="-1"
+    role="dialog"
+    aria-modal="true"
+  )
+    .modal-dialog.modal-dialog--vertical.modal-dialog--right(role= "document")
+      form.modal-content(action="#")
+        .modal-body.customization
+          .customization__header
+            .close(
+              data-dismiss="modal"
+              aria-label="Close"
+            )
+              .span( aria-hidden="true") ×
+            .text-center
+              .customization__picture
+                img(src="./images/designer-life.svg")
+              h2.customization__title Make Dashkit Your Own
+              p.customization__desc Set preferences that will be cookied for your live preview demonstration.
+          hr.customization__devider
+          .customization__content
+            -
+              var customizeOptions = [
+                {
+                  option : "Color Scheme",
+                  desc : "Overall light or dark presentation.",
+                  details : [
+                    {
+                      icon : "fe fe-sun",
+                      name : "Light Mode",
+                      isChecked : true
+                    },
+                    {
+                      icon : "fe fe-moon",
+                      name : "Dark Mode"
+                    }
+                  ]
+                },
+                {
+                  option : "Navigation Position",
+                  desc : "Select the primary navigation paradigm for your app.",
+                  details : [
+                    {
+                      name : "Sidenav",
+                      isChecked : true
+                    },
+                    {
+                      name : "Topnav"
+                    },
+                    {
+                      name : "Combo"
+                    }
+                  ]
+                },
+                {
+                  option : "Sidebar Color",
+                  desc : "Usually dictated by the color scheme, but can be overriden.",
+                  details : [
+                    {
+                      name : "Default",
+                      isChecked : true
+                    },
+                    {
+                      name : "Vibrant"
+                    }
+                  ]
+                }
+              ]
+            each val in customizeOptions
+              .option
+                h4.option__title= val.option
+                p.option__desc= val.desc
+                .option__group
+                  each item in val.details
+                    .btn.option__item
+                      input.option__input(
+                        type="radio"
+                        checked= item.isChecked ? "checked" : ""
+                      )
+                      if item.icon
+                        i(class= item.icon)
+                      span= item.name
+        .modal-footer
+          button.btn.btn--preview( type="submit") Preview
+
+
+
+              

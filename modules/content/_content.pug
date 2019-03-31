@@ -1,4 +1,159 @@
 mixin content()
   .main-content
-    h1 dafgs vhabjdkfa
+    .container
+      .content-header
+        .content-header__title
+          h6.content-header__sub-title overview
+          h2.content-header__main-title Dashboard
+        .content-header__inner
+          a.btn.btn-primary.content-header__button(href="#") Create Report
+      .content-body
+        .row
+          -
+            var statistics = [
+              {
+                category : "budget",
+                count : "$24,500",
+                status : "+3.5%",
+                icon : "fe fe-dollar-sign"
+              },
+              {
+                category : "total hour",
+                count : "763.5",
+                icon : "fe fe-briefcase"
+              },
+              {
+                category : "progress",
+                count : "84.5%",
+                progress : true,
+                icon : "fe fe-clipboard"
+              },
+              {
+                category : "effective hourly",
+                count : "$85.50",
+                icon : "fe fe-clock"
+              }
+            ]
+          each val in statistics
+            .col-lg-6.col-xl-3
+              .card.statistic-chart
+                .card-body
+                  .row.align-items-center
+                    .col.statistic-chart__inner
+                      h6.statistic-chart__title= val.category
+                      if val.progress
+                        .row.align-items-center.statistic-chart__data
+                          .col-auto.pr-0
+                            span.statistic-chart__count= val.count
+                          .col.pl-0
+                            .progress.statistic-chart__progress
+                              .progress-bar(
+                                role="progressbar"
+                                style="width:" + val.count
+                                aria-valuenow= val.count
+                                aria-valuemin="0"
+                                aria-valuemax="100"
+                              )
+                      else
+                        .statistic-chart__data
+                          span.statistic-chart__count= val.count
+                          if val.status
+                            span.badge.badge-success= val.status
+                    .col-auto.statistic-chart__icon
+                      span(class= val.icon)
+        .row
+          .col-xl-8
+            .card.orders
+              .card-header
+                .d-flex.align-items-center
+                  h4.orders__title Order
+                  .custom-control.custom-switch.orders__switch
+                    label.custom-control-label Show affiliate:
+                    input.custom-control-input(type="checkbox")
+              .card-body
+                .chart
+                  canvas#js-bar-chart(
+                    width="627"
+                    height="300"
+                  )
+          .col-xl-4
+            .card.devices
+              .card-header
+                .d-flex.align-items-center
+                  h4.devices__title Devices
+                  ul.nav.nav-tabs
+                    li.nav-item
+                      a.nav-link(href="#") All
+                    li.nav-item
+                      a.nav-link(href="#") Direct
+              .card-body
+                .chart
+                  canvas#js-doughnut-chart(
+                    width="276"
+                    height="241"
+                  )
+        .row
+          .col-xl-4
+            .card.project
+              .card-header
+                .d-flex.align-items-center
+                  h4.project__title Projects
+                  a(href="#") View all
+              .card-body
+                -
+                  var projectList = [
+                    {
+                      image : "./images/project-1.jpg",
+                      title : "Homepage Redesign",
+                      datetime : "Updated 5hr ago"
+                    },
+                    {
+                      image : "./images/project-2.jpg",
+                      title : "Travels & Time",
+                      datetime : "Updated 3hr ago"
+                    },
+                    {
+                      image : "./images/project-3.jpg",
+                      title : "Safari Exploration",
+                      datetime : "Updated 10hr ago"
+                    },
+                    {
+                      image : "./images/project-5.jpg",
+                      title : "Personal Site",
+                      datetime : "Updated 4hr ago",
+                    }
+                  ]
+                .list-group.list-group-flush.project__list
+                  each val in projectList
+                    a.list-group-item
+                      .row.align-items-center
+                        .col-auto.d-flex
+                          .project__avatar
+                            img.project__img(
+                              src= val.image
+                              alt="avatar"
+                            )
+                        .col.project__inner
+                          h4.project__title= val.title
+                          p.small.text-muted.mb-0.project__status
+                            time(
+                              datetime= "2018-05-24"
+                            )= val.datetime
+                        .col-auto
+                          .dropdown
+                            a.dropdown-ellipses.dropdown-toggle(
+                              href="#"
+                              role="button"
+                              data-toggle="dropdown"
+                              aria-haspopup="true"
+                              aria-expanded="false"
+                            )
+                              i.fe.fe-more-vertical
+                            .dropdown-menu
+                              -
+                                var projectAction = ["Action", "Another action", "Something else here"]
+                              each item, index in projectAction
+                                a.dropdown-item(href="#")= item
+          .col-xl-8
+
       
