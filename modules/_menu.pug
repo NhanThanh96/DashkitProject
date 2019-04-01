@@ -16,7 +16,7 @@
           isActive : true,
           badge : {
             content : "New",
-            badgeClass : "badge-success"
+            badgeClass : "badge-custom--success"
           }
         }
       ]
@@ -323,7 +323,7 @@
       icon : "fe fe-git-branch",
       badge : {
         content : "v1.3.4",
-        badgeClass : "badge-primary"
+        badgeClass : "badge-custom--primary"
       }
     }
   ]
@@ -377,9 +377,7 @@ mixin menu({mainMenu})
                       class= secondLevel.isActive ? "active" : ""
                     )= secondLevel.name
                       if secondLevel.badge
-                        span.badge.ml-auto(
-                          class= secondLevel.badge.badgeClass
-                        )= secondLevel.badge.content
+                        +badge-custom({ text : secondLevel.badge.content})(class="ml-auto " + secondLevel.badge.badgeClass)
         else
           a.nav-link(
             href= "#" + val.url
@@ -390,9 +388,7 @@ mixin menu({mainMenu})
               )
               |#{val.name}
             if val.badge
-                        span.badge.ml-auto(
-                          class= val.badge.badgeClass
-                        )= val.badge.content
+              +badge-custom({ text : val.badge.content})(class="ml-auto " + val.badge.badgeClass)
 
 mixin documentMenu({mainMenu})
   ul.navbar-nav.mb-md-4

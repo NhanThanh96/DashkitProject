@@ -6,7 +6,7 @@ mixin content()
           h6.content-header__sub-title overview
           h2.content-header__main-title Dashboard
         .content-header__inner
-          a.btn.btn-primary.content-header__button(href="#") Create Report
+          +btn-custom({link : "#", text : "Create Report"})(class="btn-custom--primary")
       .content-body
         .row
           -
@@ -18,7 +18,7 @@ mixin content()
                 icon : "fe fe-dollar-sign"
               },
               {
-                category : "total hour",
+                category : "total hours",
                 count : "763.5",
                 icon : "fe fe-briefcase"
               },
@@ -58,7 +58,7 @@ mixin content()
                         .statistic-chart__data
                           span.statistic-chart__count= val.count
                           if val.status
-                            span.badge.badge-success= val.status
+                            +badge-custom({ text : val.status})(class= "badge-custom--success")
                     .col-auto.statistic-chart__icon
                       span(class= val.icon)
         .row
@@ -66,10 +66,12 @@ mixin content()
             .card.orders
               .card-header
                 .d-flex.align-items-center
-                  h4.orders__title Order
-                  .custom-control.custom-switch.orders__switch
-                    label.custom-control-label Show affiliate:
-                    input.custom-control-input(type="checkbox")
+                  h4.orders__title Orders
+                  .custom-control.ml-auto.custom-switch.orders__switch
+                    span.text-muted Show affiliate:
+                    label.switch
+                      input(type="checkbox")
+                      span.slider.round
               .card-body
                 .chart
                   canvas#js-bar-chart(
@@ -133,9 +135,9 @@ mixin content()
                             alt="avatar"
                           )
                       .col.project__inner
-                        h4.project__title
+                        h4.project__heading
                           a(href="#")= val.title
-                        p.small.text-muted.mb-0.project__status
+                        p.text-muted.text-small.mb-0
                           time(
                             datetime= "2018-05-24"
                           )= val.datetime
@@ -175,7 +177,7 @@ mixin content()
             .card.goals
               .card-header
                 h4.goals__title Goals
-                a.btn.btn-default Export
+                +btn-custom({link : "#", text : "Export"})(class="btn-custom--sm btn-custom--default")
               .card-body
                 .table-responsive
                   table.table.goal-table
@@ -202,7 +204,8 @@ mixin content()
                           ]
                         each val in optionSort
                           th.js-option-sort(
-                            colspan= val.colspan ? 2 : 0 
+                            colspan= val.colspan ? 2 : 0
+                            class= val.colspan ? "text-center" : ""
                           )
                             a.goal-table__link-sort(href="javascript:void(0)")= val.name
                     tbody
@@ -216,19 +219,23 @@ mixin content()
                             team : [
                               {
                                 memberLink : "#",
-                                memberImg : "./images/avatar-1.jpg"
+                                memberImg : "./images/avatar-1.jpg",
+                                name : "Dianna Smiley"
                               },
                               {
                                 memberLink : "#",
-                                memberImg : "./images/avatar-2.jpg"
+                                memberImg : "./images/avatar-2.jpg",
+                                name : "Ab Hadley"
                               },
                               {
                                 memberLink : "#",
-                                memberImg : "./images/avatar-3.jpg"
+                                memberImg : "./images/avatar-3.jpg",
+                                name : "Ab Hadley"
                               },
                               {
                                 memberLink : "#",
-                                memberImg : "./images/avatar-4.jpg"
+                                memberImg : "./images/avatar-4.jpg",
+                                name : "Daniela Dewitt"
                               }
                             ]
                           },
@@ -240,15 +247,18 @@ mixin content()
                             team : [
                               {
                                 memberLink : "#",
-                                memberImg : "./images/avatar-1.jpg"
+                                memberImg : "./images/avatar-1.jpg",
+                                name : "Dianna Smiley"
                               },
                               {
                                 memberLink : "#",
-                                memberImg : "./images/avatar-2.jpg"
+                                memberImg : "./images/avatar-2.jpg",
+                                name : "Ab Hadley"
                               },
                               {
                                 memberLink : "#",
-                                memberImg : "./images/avatar-3.jpg"
+                                memberImg : "./images/avatar-3.jpg",
+                                name : "Adolfo Hess"
                               }
                             ]
                           },
@@ -260,15 +270,18 @@ mixin content()
                             team : [
                               {
                                 memberLink : "#",
-                                memberImg : "./images/avatar-1.jpg"
+                                memberImg : "./images/avatar-1.jpg",
+                                name : "Dianna Smiley"
                               },
                               {
                                 memberLink : "#",
-                                memberImg : "./images/avatar-2.jpg"
+                                memberImg : "./images/avatar-2.jpg",
+                                name : "Ab Hadley"
                               },
                               {
                                 memberLink : "#",
-                                memberImg : "./images/avatar-3.jpg"
+                                memberImg : "./images/avatar-3.jpg",
+                                name : "Adolfo Hess"
                               }
                             ]
                           },
@@ -280,11 +293,13 @@ mixin content()
                             team : [
                               {
                                 memberLink : "#",
-                                memberImg : "./images/avatar-1.jpg"
+                                memberImg : "./images/avatar-1.jpg",
+                                name : "Dianna Smiley"
                               },
                               {
                                 memberLink : "#",
-                                memberImg : "./images/avatar-2.jpg"
+                                memberImg : "./images/avatar-2.jpg",
+                                name : "Ab Hadley"
                               }
                             ]
                           },
@@ -296,19 +311,23 @@ mixin content()
                             team : [
                               {
                                 memberLink : "#",
-                                memberImg : "./images/avatar-1.jpg"
+                                memberImg : "./images/avatar-1.jpg",
+                                name : "Dianna Smiley"
                               },
                               {
                                 memberLink : "#",
-                                memberImg : "./images/avatar-2.jpg"
+                                memberImg : "./images/avatar-2.jpg",
+                                name : "Ab Hadley"
                               },
                               {
                                 memberLink : "#",
-                                memberImg : "./images/avatar-3.jpg"
+                                memberImg : "./images/avatar-3.jpg",
+                                name : "Ab Hadley"
                               },
                               {
                                 memberLink : "#",
-                                memberImg : "./images/avatar-4.jpg"
+                                memberImg : "./images/avatar-4.jpg",
+                                name : "Daniela Dewitt"
                               }
                             ]
                           }
@@ -332,7 +351,12 @@ mixin content()
                           td.goal-table__team
                             each item in val.team
                               .goal-table__avatars
-                                a.goal-table__avatar(href=item.memberLink)
+                                a.goal-table__avatar(
+                                  href=item.memberLink
+                                  data-toggle="tooltip"
+                                  title=""
+                                  data-original-title=item.name
+                                  )
                                   img.goal-table__img(src=item.memberImg)
                           td
                             .dropdown.project__action-list
@@ -351,14 +375,14 @@ mixin content()
                                   a.dropdown-item(href="#")= item
           .col-xl-5
             .intro
-              .row.justify-content-ce
+              .row.justify-content-center
                 .col-12.col-xl-10
                   .intro__inner
-                    img(src="./images/happiness.svg", alt="intro")
+                    img.intro__img(src="./images/happiness.svg", alt="intro")
                   h3.intro__title We released 2008 new versions of our theme for glory.
-                  p.intro__content This is a true story and totally not made up. This is going to be better in the long run but for now this is the way it is.
+                  p.text-muted This is a true story and totally not made up. This is going to be better in the long run but for now this is the way it is.
                   .intro__action
-                    a.btn(href="#")
+                    +btn-custom({link : "#", text : "Try it for free"})(class="btn-custom--primary")
             
 
       

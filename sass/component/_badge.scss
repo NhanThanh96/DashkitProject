@@ -1,0 +1,17 @@
+.badge-custom {
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 6px;
+  line-height: 11.25px;
+  font-size: 11.25px;
+  font-weight: 300;
+  padding: 3.7px 5.6px;
+  &--success {
+    color: $cl-light-green;
+    background-color: $bg-btn-success;
+  }
+  &--primary {
+    color: $cl-white;
+    background-color: $cl-dark-blue;
+  }
+}

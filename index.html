@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./fonts/fontawesome/css/all.min.css"/>
     <link rel="stylesheet" href="./libs/bootstrap/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="./css/style.min.css"/>
-    <title>Overview &middot; Dashboard theme &middot; Official Bootstrap Themes</title>
+    <title>Dashkit</title>
   </head>
   <body>
     <section class="content">
@@ -282,7 +282,7 @@
                   <ul class="nav flex-column">
                     <li class="nav-item"><a class="nav-link" href="#">Default</a>
                     </li>
-                    <li class="nav-item"><a class="nav-link active" href="#">Alternative<span class="badge ml-auto badge-success">New</span></a>
+                    <li class="nav-item"><a class="nav-link active" href="#">Alternative<span class="badge badge-custom ml-auto badge-custom--success">New</span></a>
                     </li>
                   </ul>
                 </div>
@@ -440,7 +440,7 @@
                   </ul>
                 </div>
               </li>
-              <li class="nav-item"><a class="nav-link" href="##"><i class="fe fe-git-branch"></i>Changelog<span class="badge ml-auto badge-primary">v1.3.4</span></a>
+              <li class="nav-item"><a class="nav-link" href="##"><i class="fe fe-git-branch"></i>Changelog<span class="badge ml-auto badge-custom--primary">v1.3.4</span></a>
               </li>
             </ul>
             <div class="mt-auto"></div>
@@ -467,7 +467,8 @@
               <h6 class="content-header__sub-title">overview</h6>
               <h2 class="content-header__main-title">Dashboard</h2>
             </div>
-            <div class="content-header__inner"><a class="btn btn-primary content-header__button" href="#">Create Report</a></div>
+            <div class="content-header__inner"><a class="btn btn-custom btn-custom--primary" href="#">Create Report</a>
+            </div>
           </div>
           <div class="content-body">
             <div class="row">
@@ -477,7 +478,7 @@
                     <div class="row align-items-center">
                       <div class="col statistic-chart__inner">
                         <h6 class="statistic-chart__title">budget</h6>
-                        <div class="statistic-chart__data"><span class="statistic-chart__count">$24,500</span><span class="badge badge-success">+3.5%</span>
+                        <div class="statistic-chart__data"><span class="statistic-chart__count">$24,500</span><span class="badge badge-custom badge-custom--success">+3.5%</span>
                         </div>
                       </div>
                       <div class="col-auto statistic-chart__icon"><span class="fe fe-dollar-sign"></span></div>
@@ -490,7 +491,7 @@
                   <div class="card-body">
                     <div class="row align-items-center">
                       <div class="col statistic-chart__inner">
-                        <h6 class="statistic-chart__title">total hour</h6>
+                        <h6 class="statistic-chart__title">total hours</h6>
                         <div class="statistic-chart__data"><span class="statistic-chart__count">763.5</span>
                         </div>
                       </div>
@@ -539,10 +540,11 @@
                 <div class="card orders">
                   <div class="card-header">
                     <div class="d-flex align-items-center">
-                      <h4 class="orders__title">Order</h4>
-                      <div class="custom-control custom-switch orders__switch">
-                        <label class="custom-control-label">Show affiliate:</label>
-                        <input class="custom-control-input" type="checkbox"/>
+                      <h4 class="orders__title">Orders</h4>
+                      <div class="custom-control ml-auto custom-switch orders__switch"><span class="text-muted">Show affiliate:</span>
+                        <label class="switch">
+                          <input type="checkbox"/><span class="slider round"></span>
+                        </label>
                       </div>
                     </div>
                   </div>
@@ -585,8 +587,8 @@
                       <div class="row align-items-center project__item">
                         <div class="col-auto d-flex"><a class="project__img-link" href="#"><img class="project__img" src="./images/project-1.jpg" alt="avatar"/></a></div>
                         <div class="col project__inner">
-                          <h4 class="project__title"><a href="#">Homepage Redesign</a></h4>
-                          <p class="small text-muted mb-0 project__status">
+                          <h4 class="project__heading"><a href="#">Homepage Redesign</a></h4>
+                          <p class="text-muted text-small mb-0">
                             <time datetime="2018-05-24">Updated 5hr ago</time>
                           </p>
                         </div>
@@ -601,8 +603,8 @@
                       <div class="row align-items-center project__item">
                         <div class="col-auto d-flex"><a class="project__img-link" href="#"><img class="project__img" src="./images/project-2.jpg" alt="avatar"/></a></div>
                         <div class="col project__inner">
-                          <h4 class="project__title"><a href="#">Travels &amp; Time</a></h4>
-                          <p class="small text-muted mb-0 project__status">
+                          <h4 class="project__heading"><a href="#">Travels &amp; Time</a></h4>
+                          <p class="text-muted text-small mb-0">
                             <time datetime="2018-05-24">Updated 3hr ago</time>
                           </p>
                         </div>
@@ -617,8 +619,8 @@
                       <div class="row align-items-center project__item">
                         <div class="col-auto d-flex"><a class="project__img-link" href="#"><img class="project__img" src="./images/project-3.jpg" alt="avatar"/></a></div>
                         <div class="col project__inner">
-                          <h4 class="project__title"><a href="#">Safari Exploration</a></h4>
-                          <p class="small text-muted mb-0 project__status">
+                          <h4 class="project__heading"><a href="#">Safari Exploration</a></h4>
+                          <p class="text-muted text-small mb-0">
                             <time datetime="2018-05-24">Updated 10hr ago</time>
                           </p>
                         </div>
@@ -633,8 +635,8 @@
                       <div class="row align-items-center project__item">
                         <div class="col-auto d-flex"><a class="project__img-link" href="#"><img class="project__img" src="./images/project-5.jpg" alt="avatar"/></a></div>
                         <div class="col project__inner">
-                          <h4 class="project__title"><a href="#">Personal Site</a></h4>
-                          <p class="small text-muted mb-0 project__status">
+                          <h4 class="project__heading"><a href="#">Personal Site</a></h4>
+                          <p class="text-muted text-small mb-0">
                             <time datetime="2018-05-24">Updated 4hr ago</time>
                           </p>
                         </div>
@@ -674,7 +676,7 @@
               <div class="col-xl-7">
                 <div class="card goals">
                   <div class="card-header">
-                    <h4 class="goals__title">Goals</h4><a class="btn btn-default">Export</a>
+                    <h4 class="goals__title">Goals</h4><a class="btn btn-custom btn-custom--sm btn-custom--default" href="#">Export</a>
                   </div>
                   <div class="card-body">
                     <div class="table-responsive">
@@ -685,7 +687,7 @@
                             <th class="js-option-sort" colspan="0"><a class="goal-table__link-sort" href="javascript:void(0)">status</a></th>
                             <th class="js-option-sort" colspan="0"><a class="goal-table__link-sort" href="javascript:void(0)">progress</a></th>
                             <th class="js-option-sort" colspan="0"><a class="goal-table__link-sort" href="javascript:void(0)">due date</a></th>
-                            <th class="js-option-sort" colspan="2"><a class="goal-table__link-sort" href="javascript:void(0)">team</a></th>
+                            <th class="js-option-sort text-center" colspan="2"><a class="goal-table__link-sort" href="javascript:void(0)">team</a></th>
                           </tr>
                         </thead>
                         <tbody>
@@ -697,10 +699,10 @@
                               <time datetime="07/24/18">07/24/18</time>
                             </td>
                             <td class="goal-table__team">
-                              <div class="goal-table__avatars"><a class="goal-table__avatar" href="#"><img class="goal-table__img" src="./images/avatar-1.jpg"/></a></div>
-                              <div class="goal-table__avatars"><a class="goal-table__avatar" href="#"><img class="goal-table__img" src="./images/avatar-2.jpg"/></a></div>
-                              <div class="goal-table__avatars"><a class="goal-table__avatar" href="#"><img class="goal-table__img" src="./images/avatar-3.jpg"/></a></div>
-                              <div class="goal-table__avatars"><a class="goal-table__avatar" href="#"><img class="goal-table__img" src="./images/avatar-4.jpg"/></a></div>
+                              <div class="goal-table__avatars"><a class="goal-table__avatar" href="#" data-toggle="tooltip" title="" data-original-title="Dianna Smiley"><img class="goal-table__img" src="./images/avatar-1.jpg"/></a></div>
+                              <div class="goal-table__avatars"><a class="goal-table__avatar" href="#" data-toggle="tooltip" title="" data-original-title="Ab Hadley"><img class="goal-table__img" src="./images/avatar-2.jpg"/></a></div>
+                              <div class="goal-table__avatars"><a class="goal-table__avatar" href="#" data-toggle="tooltip" title="" data-original-title="Ab Hadley"><img class="goal-table__img" src="./images/avatar-3.jpg"/></a></div>
+                              <div class="goal-table__avatars"><a class="goal-table__avatar" href="#" data-toggle="tooltip" title="" data-original-title="Daniela Dewitt"><img class="goal-table__img" src="./images/avatar-4.jpg"/></a></div>
                             </td>
                             <td>
                               <div class="dropdown project__action-list"><a class="dropdown-ellipses dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fe fe-more-vertical"></i></a>
@@ -717,9 +719,9 @@
                               <time datetime="08/26/18">08/26/18</time>
                             </td>
                             <td class="goal-table__team">
-                              <div class="goal-table__avatars"><a class="goal-table__avatar" href="#"><img class="goal-table__img" src="./images/avatar-1.jpg"/></a></div>
-                              <div class="goal-table__avatars"><a class="goal-table__avatar" href="#"><img class="goal-table__img" src="./images/avatar-2.jpg"/></a></div>
-                              <div class="goal-table__avatars"><a class="goal-table__avatar" href="#"><img class="goal-table__img" src="./images/avatar-3.jpg"/></a></div>
+                              <div class="goal-table__avatars"><a class="goal-table__avatar" href="#" data-toggle="tooltip" title="" data-original-title="Dianna Smiley"><img class="goal-table__img" src="./images/avatar-1.jpg"/></a></div>
+                              <div class="goal-table__avatars"><a class="goal-table__avatar" href="#" data-toggle="tooltip" title="" data-original-title="Ab Hadley"><img class="goal-table__img" src="./images/avatar-2.jpg"/></a></div>
+                              <div class="goal-table__avatars"><a class="goal-table__avatar" href="#" data-toggle="tooltip" title="" data-original-title="Adolfo Hess"><img class="goal-table__img" src="./images/avatar-3.jpg"/></a></div>
                             </td>
                             <td>
                               <div class="dropdown project__action-list"><a class="dropdown-ellipses dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fe fe-more-vertical"></i></a>
@@ -736,9 +738,9 @@
                               <time datetime="06/19/18">06/19/18</time>
                             </td>
                             <td class="goal-table__team">
-                              <div class="goal-table__avatars"><a class="goal-table__avatar" href="#"><img class="goal-table__img" src="./images/avatar-1.jpg"/></a></div>
-                              <div class="goal-table__avatars"><a class="goal-table__avatar" href="#"><img class="goal-table__img" src="./images/avatar-2.jpg"/></a></div>
-                              <div class="goal-table__avatars"><a class="goal-table__avatar" href="#"><img class="goal-table__img" src="./images/avatar-3.jpg"/></a></div>
+                              <div class="goal-table__avatars"><a class="goal-table__avatar" href="#" data-toggle="tooltip" title="" data-original-title="Dianna Smiley"><img class="goal-table__img" src="./images/avatar-1.jpg"/></a></div>
+                              <div class="goal-table__avatars"><a class="goal-table__avatar" href="#" data-toggle="tooltip" title="" data-original-title="Ab Hadley"><img class="goal-table__img" src="./images/avatar-2.jpg"/></a></div>
+                              <div class="goal-table__avatars"><a class="goal-table__avatar" href="#" data-toggle="tooltip" title="" data-original-title="Adolfo Hess"><img class="goal-table__img" src="./images/avatar-3.jpg"/></a></div>
                             </td>
                             <td>
                               <div class="dropdown project__action-list"><a class="dropdown-ellipses dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fe fe-more-vertical"></i></a>
@@ -755,8 +757,8 @@
                               <time datetime="06/25/18">06/25/18</time>
                             </td>
                             <td class="goal-table__team">
-                              <div class="goal-table__avatars"><a class="goal-table__avatar" href="#"><img class="goal-table__img" src="./images/avatar-1.jpg"/></a></div>
-                              <div class="goal-table__avatars"><a class="goal-table__avatar" href="#"><img class="goal-table__img" src="./images/avatar-2.jpg"/></a></div>
+                              <div class="goal-table__avatars"><a class="goal-table__avatar" href="#" data-toggle="tooltip" title="" data-original-title="Dianna Smiley"><img class="goal-table__img" src="./images/avatar-1.jpg"/></a></div>
+                              <div class="goal-table__avatars"><a class="goal-table__avatar" href="#" data-toggle="tooltip" title="" data-original-title="Ab Hadley"><img class="goal-table__img" src="./images/avatar-2.jpg"/></a></div>
                             </td>
                             <td>
                               <div class="dropdown project__action-list"><a class="dropdown-ellipses dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fe fe-more-vertical"></i></a>
@@ -773,10 +775,10 @@
                               <time datetime="06/30/18">06/30/18</time>
                             </td>
                             <td class="goal-table__team">
-                              <div class="goal-table__avatars"><a class="goal-table__avatar" href="#"><img class="goal-table__img" src="./images/avatar-1.jpg"/></a></div>
-                              <div class="goal-table__avatars"><a class="goal-table__avatar" href="#"><img class="goal-table__img" src="./images/avatar-2.jpg"/></a></div>
-                              <div class="goal-table__avatars"><a class="goal-table__avatar" href="#"><img class="goal-table__img" src="./images/avatar-3.jpg"/></a></div>
-                              <div class="goal-table__avatars"><a class="goal-table__avatar" href="#"><img class="goal-table__img" src="./images/avatar-4.jpg"/></a></div>
+                              <div class="goal-table__avatars"><a class="goal-table__avatar" href="#" data-toggle="tooltip" title="" data-original-title="Dianna Smiley"><img class="goal-table__img" src="./images/avatar-1.jpg"/></a></div>
+                              <div class="goal-table__avatars"><a class="goal-table__avatar" href="#" data-toggle="tooltip" title="" data-original-title="Ab Hadley"><img class="goal-table__img" src="./images/avatar-2.jpg"/></a></div>
+                              <div class="goal-table__avatars"><a class="goal-table__avatar" href="#" data-toggle="tooltip" title="" data-original-title="Ab Hadley"><img class="goal-table__img" src="./images/avatar-3.jpg"/></a></div>
+                              <div class="goal-table__avatars"><a class="goal-table__avatar" href="#" data-toggle="tooltip" title="" data-original-title="Daniela Dewitt"><img class="goal-table__img" src="./images/avatar-4.jpg"/></a></div>
                             </td>
                             <td>
                               <div class="dropdown project__action-list"><a class="dropdown-ellipses dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fe fe-more-vertical"></i></a>
@@ -793,12 +795,13 @@
               </div>
               <div class="col-xl-5">
                 <div class="intro">
-                  <div class="row justify-content-ce">
+                  <div class="row justify-content-center">
                     <div class="col-12 col-xl-10">
-                      <div class="intro__inner"><img src="./images/happiness.svg" alt="intro"/></div>
+                      <div class="intro__inner"><img class="intro__img" src="./images/happiness.svg" alt="intro"/></div>
                       <h3 class="intro__title">We released 2008 new versions of our theme for glory.</h3>
-                      <p class="intro__content">This is a true story and totally not made up. This is going to be better in the long run but for now this is the way it is.</p>
-                      <div class="intro__action"><a class="btn" href="#"></a></div>
+                      <p class="text-muted">This is a true story and totally not made up. This is going to be better in the long run but for now this is the way it is.</p>
+                      <div class="intro__action"><a class="btn btn-custom btn-custom--primary" href="#">Try it for free</a>
+                      </div>
                     </div>
                   </div>
                 </div>

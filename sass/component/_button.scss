@@ -1,16 +1,43 @@
-a.btn-custom-primary {
+.btn-custom {
   color: $cl-white;
   font-size: 15px;
-  background-color: $cl-dark-blue;
-  border-color: $cl-dark-blue;
+  font-weight: 400;
   display: inline-block;
-  &:hover {
-    color: $cl-white;
-    background-color: darken($cl-dark-blue, 5%);
-    border-color: darken($cl-dark-blue, 8%);
+  padding: 8px 12px;
+  border-radius: 6px;
+  &--sm {
+    font-size: 13px;
+    border-radius: 4px;
+    padding: 2px 8px;
+    line-height: 1.75;
   }
-  &:focus {
-    box-shadow : 0 0 0 0.15rem rgba(76,143,233,.5);
-    outline: 0;
+  &--default {
+    color: #283e59;
+    background-color: $cl-white;
+    border-color: #e3ebf6;
+    &:hover {
+      background-color: #f9fbfd;
+      border-color: #d2ddec;
+    }
+    &:focus {
+      box-shadow : 0 0 0 0.15rem rgba(223,226,230,.5);
+      outline: 0;
+    }
   }
+  &--primary {
+    background-color: $cl-dark-blue;
+    border-color: $cl-dark-blue;
+    &:hover {
+      color: $cl-white;
+      background-color: darken($cl-dark-blue, 5%);
+      border-color: darken($cl-dark-blue, 8%);
+    }
+    &:focus {
+      box-shadow : 0 0 0 0.15rem rgba(76,143,233,.5);
+      outline: 0;
+    }
+  }
+
 }
+
+ 
