@@ -100,60 +100,265 @@ mixin content()
                   h4.project__title Projects
                   a(href="#") View all
               .card-body
-                -
-                  var projectList = [
-                    {
-                      image : "./images/project-1.jpg",
-                      title : "Homepage Redesign",
-                      datetime : "Updated 5hr ago"
-                    },
-                    {
-                      image : "./images/project-2.jpg",
-                      title : "Travels & Time",
-                      datetime : "Updated 3hr ago"
-                    },
-                    {
-                      image : "./images/project-3.jpg",
-                      title : "Safari Exploration",
-                      datetime : "Updated 10hr ago"
-                    },
-                    {
-                      image : "./images/project-5.jpg",
-                      title : "Personal Site",
-                      datetime : "Updated 4hr ago",
-                    }
-                  ]
                 .list-group.list-group-flush.project__list
+                  -
+                    var projectList = [
+                      {
+                        image : "./images/project-1.jpg",
+                        title : "Homepage Redesign",
+                        datetime : "Updated 5hr ago"
+                      },
+                      {
+                        image : "./images/project-2.jpg",
+                        title : "Travels & Time",
+                        datetime : "Updated 3hr ago"
+                      },
+                      {
+                        image : "./images/project-3.jpg",
+                        title : "Safari Exploration",
+                        datetime : "Updated 10hr ago"
+                      },
+                      {
+                        image : "./images/project-5.jpg",
+                        title : "Personal Site",
+                        datetime : "Updated 4hr ago",
+                      }
+                    ]
                   each val in projectList
-                    a.list-group-item
-                      .row.align-items-center
-                        .col-auto.d-flex
-                          .project__avatar
-                            img.project__img(
-                              src= val.image
-                              alt="avatar"
-                            )
-                        .col.project__inner
-                          h4.project__title= val.title
-                          p.small.text-muted.mb-0.project__status
-                            time(
-                              datetime= "2018-05-24"
-                            )= val.datetime
-                        .col-auto
-                          .dropdown
-                            a.dropdown-ellipses.dropdown-toggle(
-                              href="#"
-                              role="button"
-                              data-toggle="dropdown"
-                              aria-haspopup="true"
-                              aria-expanded="false"
-                            )
-                              i.fe.fe-more-vertical
-                            .dropdown-menu
-                              -
-                                var projectAction = ["Action", "Another action", "Something else here"]
-                              each item, index in projectAction
-                                a.dropdown-item(href="#")= item
+                    .row.align-items-center.project__item
+                      .col-auto.d-flex
+                        a.project__img-link(href="#")
+                          img.project__img(
+                            src= val.image
+                            alt="avatar"
+                          )
+                      .col.project__inner
+                        h4.project__title
+                          a(href="#")= val.title
+                        p.small.text-muted.mb-0.project__status
+                          time(
+                            datetime= "2018-05-24"
+                          )= val.datetime
+                      .col-auto
+                        .dropdown.project__action-list
+                          a.dropdown-ellipses.dropdown-toggle(
+                            href="#"
+                            role="button"
+                            data-toggle="dropdown"
+                            aria-haspopup="true"
+                            aria-expanded="false"
+                          )
+                            i.fe.fe-more-vertical
+                          .dropdown-menu.dropdown-menu-right.project__dropdown(x-placement="top-end")
+                            -
+                              var projectAction = ["Action", "Another action", "Something else here"]
+                            each item, index in projectAction
+                              a.dropdown-item(href="#")= item
+                    hr.project__devider
           .col-xl-8
+            .card.performance
+              .card-header
+                .d-flex.align-items-center
+                  h4.performance__title Performance
+                  ul.nav.nav-tabs
+                    each val, index in ["All", "Direct", "Organic"]
+                      li.nav-item
+                        a.nav-link(href="#")= val
+              .card-body
+                .chart
+                  canvas#js-performance-chart(
+                    width="628"
+                    height="300"
+                  )
+        .row
+          .col-xl-7
+            .card.goals
+              .card-header
+                h4.goals__title Goals
+                a.btn.btn-default Export
+              .card-body
+                .table-responsive
+                  table.table.goal-table
+                    thead
+                      tr
+                        -
+                          var optionSort = [
+                            {
+                              name : "Goal"
+                            },
+                            {
+                              name : "status"
+                            },
+                            {
+                              name : "progress"
+                            },
+                            {
+                              name : "due date"
+                            },
+                            {
+                              name : "team",
+                              colspan : true
+                            }
+                          ]
+                        each val in optionSort
+                          th.js-option-sort(
+                            colspan= val.colspan ? 2 : 0 
+                          )
+                            a.goal-table__link-sort(href="javascript:void(0)")= val.name
+                    tbody
+                      -
+                        var goalList = [
+                          {
+                            name : "Update the API",
+                            status : "In progress",
+                            progress : "55%",
+                            deadline : "07/24/18",
+                            team : [
+                              {
+                                memberLink : "#",
+                                memberImg : "./images/avatar-1.jpg"
+                              },
+                              {
+                                memberLink : "#",
+                                memberImg : "./images/avatar-2.jpg"
+                              },
+                              {
+                                memberLink : "#",
+                                memberImg : "./images/avatar-3.jpg"
+                              },
+                              {
+                                memberLink : "#",
+                                memberImg : "./images/avatar-4.jpg"
+                              }
+                            ]
+                          },
+                          {
+                            name : "Release v1.2-Beta",
+                            status : "In progress",
+                            progress : "25%",
+                            deadline : "08/26/18",
+                            team : [
+                              {
+                                memberLink : "#",
+                                memberImg : "./images/avatar-1.jpg"
+                              },
+                              {
+                                memberLink : "#",
+                                memberImg : "./images/avatar-2.jpg"
+                              },
+                              {
+                                memberLink : "#",
+                                memberImg : "./images/avatar-3.jpg"
+                              }
+                            ]
+                          },
+                          {
+                            name : "GDPR Compliance",
+                            status : "Completed",
+                            progress : "100%",
+                            deadline : "06/19/18",
+                            team : [
+                              {
+                                memberLink : "#",
+                                memberImg : "./images/avatar-1.jpg"
+                              },
+                              {
+                                memberLink : "#",
+                                memberImg : "./images/avatar-2.jpg"
+                              },
+                              {
+                                memberLink : "#",
+                                memberImg : "./images/avatar-3.jpg"
+                              }
+                            ]
+                          },
+                          {
+                            name : "v1.2 Documentation",
+                            status : "Cancelled",
+                            progress : "0%",
+                            deadline : "06/25/18",
+                            team : [
+                              {
+                                memberLink : "#",
+                                memberImg : "./images/avatar-1.jpg"
+                              },
+                              {
+                                memberLink : "#",
+                                memberImg : "./images/avatar-2.jpg"
+                              }
+                            ]
+                          },
+                          {
+                            name : "Plan design offsite",
+                            status : "Completed",
+                            progress : "100%",
+                            deadline : "06/30/18",
+                            team : [
+                              {
+                                memberLink : "#",
+                                memberImg : "./images/avatar-1.jpg"
+                              },
+                              {
+                                memberLink : "#",
+                                memberImg : "./images/avatar-2.jpg"
+                              },
+                              {
+                                memberLink : "#",
+                                memberImg : "./images/avatar-3.jpg"
+                              },
+                              {
+                                memberLink : "#",
+                                memberImg : "./images/avatar-4.jpg"
+                              }
+                            ]
+                          }
+                        ]
+                      each val in goalList
+                        tr
+                          td.goal-table__project= val.name
+                          case val.status
+                            when "In progress"
+                              td.goal-table__status
+                                span.status-icon.status-icon--progress= val.status
+                            when "Cancelled"
+                              td.goal-table__status
+                                span.status-icon.status-icon--cancel= val.status
+                            default
+                              td.goal-table__status
+                                span.status-icon.status-icon--complete= val.status
+                          td.goal-table__progress= val.progress
+                          td.goal-table__deadline
+                            time(datetime=val.deadline)=val.deadline
+                          td.goal-table__team
+                            each item in val.team
+                              .goal-table__avatars
+                                a.goal-table__avatar(href=item.memberLink)
+                                  img.goal-table__img(src=item.memberImg)
+                          td
+                            .dropdown.project__action-list
+                              a.dropdown-ellipses.dropdown-toggle(
+                                href="#"
+                                role="button"
+                                data-toggle="dropdown"
+                                aria-haspopup="true"
+                                aria-expanded="false"
+                              )
+                                i.fe.fe-more-vertical
+                              .dropdown-menu.dropdown-menu-right.project__dropdown(x-placement="top-end")
+                                -
+                                  var projectAction = ["Action", "Another action", "Something else here"]
+                                each item, index in projectAction
+                                  a.dropdown-item(href="#")= item
+          .col-xl-5
+            .intro
+              .row.justify-content-ce
+                .col-12.col-xl-10
+                  .intro__inner
+                    img(src="./images/happiness.svg", alt="intro")
+                  h3.intro__title We released 2008 new versions of our theme for glory.
+                  p.intro__content This is a true story and totally not made up. This is going to be better in the long run but for now this is the way it is.
+                  .intro__action
+                    a.btn(href="#")
+            
 
       

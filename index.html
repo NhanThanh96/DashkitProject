@@ -31,40 +31,40 @@
                 <div class="option">
                   <h4 class="option__title">Color Scheme</h4>
                   <p class="option__desc">Overall light or dark presentation.</p>
-                  <div class="option__group">
-                    <div class="btn option__item">
+                  <div class="option__group" data-toggle="buttons">
+                    <label class="btn option__item active">
                       <input class="option__input" type="radio" checked="checked"/><i class="fe fe-sun"></i><span>Light Mode</span>
-                    </div>
-                    <div class="btn option__item">
-                      <input class="option__input" type="radio" checked=""/><i class="fe fe-moon"></i><span>Dark Mode</span>
-                    </div>
+                    </label>
+                    <label class="btn option__item">
+                      <input class="option__input" type="radio"/><i class="fe fe-moon"></i><span>Dark Mode</span>
+                    </label>
                   </div>
                 </div>
                 <div class="option">
                   <h4 class="option__title">Navigation Position</h4>
                   <p class="option__desc">Select the primary navigation paradigm for your app.</p>
-                  <div class="option__group">
-                    <div class="btn option__item">
+                  <div class="option__group" data-toggle="buttons">
+                    <label class="btn option__item active">
                       <input class="option__input" type="radio" checked="checked"/><span>Sidenav</span>
-                    </div>
-                    <div class="btn option__item">
-                      <input class="option__input" type="radio" checked=""/><span>Topnav</span>
-                    </div>
-                    <div class="btn option__item">
-                      <input class="option__input" type="radio" checked=""/><span>Combo</span>
-                    </div>
+                    </label>
+                    <label class="btn option__item">
+                      <input class="option__input" type="radio"/><span>Topnav</span>
+                    </label>
+                    <label class="btn option__item">
+                      <input class="option__input" type="radio"/><span>Combo</span>
+                    </label>
                   </div>
                 </div>
                 <div class="option">
                   <h4 class="option__title">Sidebar Color</h4>
                   <p class="option__desc">Usually dictated by the color scheme, but can be overriden.</p>
-                  <div class="option__group">
-                    <div class="btn option__item">
+                  <div class="option__group" data-toggle="buttons">
+                    <label class="btn option__item active">
                       <input class="option__input" type="radio" checked="checked"/><span>Default</span>
-                    </div>
-                    <div class="btn option__item">
-                      <input class="option__input" type="radio" checked=""/><span>Vibrant</span>
-                    </div>
+                    </label>
+                    <label class="btn option__item">
+                      <input class="option__input" type="radio"/><span>Vibrant</span>
+                    </label>
                   </div>
                 </div>
               </div>
@@ -581,80 +581,228 @@
                     </div>
                   </div>
                   <div class="card-body">
-                    <div class="list-group list-group-flush project__list"><a class="list-group-item">
-                        <div class="row align-items-center">
-                          <div class="col-auto d-flex">
-                            <div class="project__avatar"><img class="project__img" src="./images/project-1.jpg" alt="avatar"/></div>
-                          </div>
-                          <div class="col project__inner">
-                            <h4 class="project__title">Homepage Redesign</h4>
-                            <p class="small text-muted mb-0 project__status">
-                              <time datetime="2018-05-24">Updated 5hr ago</time>
-                            </p>
-                          </div>
-                          <div class="col-auto">
-                            <div class="dropdown"><a class="dropdown-ellipses dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fe fe-more-vertical"></i></a>
-                              <div class="dropdown-menu"><a class="dropdown-item" href="#">Action</a><a class="dropdown-item" href="#">Another action</a><a class="dropdown-item" href="#">Something else here</a>
-                              </div>
+                    <div class="list-group list-group-flush project__list">
+                      <div class="row align-items-center project__item">
+                        <div class="col-auto d-flex"><a class="project__img-link" href="#"><img class="project__img" src="./images/project-1.jpg" alt="avatar"/></a></div>
+                        <div class="col project__inner">
+                          <h4 class="project__title"><a href="#">Homepage Redesign</a></h4>
+                          <p class="small text-muted mb-0 project__status">
+                            <time datetime="2018-05-24">Updated 5hr ago</time>
+                          </p>
+                        </div>
+                        <div class="col-auto">
+                          <div class="dropdown project__action-list"><a class="dropdown-ellipses dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fe fe-more-vertical"></i></a>
+                            <div class="dropdown-menu dropdown-menu-right project__dropdown" x-placement="top-end"><a class="dropdown-item" href="#">Action</a><a class="dropdown-item" href="#">Another action</a><a class="dropdown-item" href="#">Something else here</a>
                             </div>
                           </div>
-                        </div></a><a class="list-group-item">
-                        <div class="row align-items-center">
-                          <div class="col-auto d-flex">
-                            <div class="project__avatar"><img class="project__img" src="./images/project-2.jpg" alt="avatar"/></div>
-                          </div>
-                          <div class="col project__inner">
-                            <h4 class="project__title">Travels &amp; Time</h4>
-                            <p class="small text-muted mb-0 project__status">
-                              <time datetime="2018-05-24">Updated 3hr ago</time>
-                            </p>
-                          </div>
-                          <div class="col-auto">
-                            <div class="dropdown"><a class="dropdown-ellipses dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fe fe-more-vertical"></i></a>
-                              <div class="dropdown-menu"><a class="dropdown-item" href="#">Action</a><a class="dropdown-item" href="#">Another action</a><a class="dropdown-item" href="#">Something else here</a>
-                              </div>
+                        </div>
+                      </div>
+                      <hr class="project__devider"/>
+                      <div class="row align-items-center project__item">
+                        <div class="col-auto d-flex"><a class="project__img-link" href="#"><img class="project__img" src="./images/project-2.jpg" alt="avatar"/></a></div>
+                        <div class="col project__inner">
+                          <h4 class="project__title"><a href="#">Travels &amp; Time</a></h4>
+                          <p class="small text-muted mb-0 project__status">
+                            <time datetime="2018-05-24">Updated 3hr ago</time>
+                          </p>
+                        </div>
+                        <div class="col-auto">
+                          <div class="dropdown project__action-list"><a class="dropdown-ellipses dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fe fe-more-vertical"></i></a>
+                            <div class="dropdown-menu dropdown-menu-right project__dropdown" x-placement="top-end"><a class="dropdown-item" href="#">Action</a><a class="dropdown-item" href="#">Another action</a><a class="dropdown-item" href="#">Something else here</a>
                             </div>
                           </div>
-                        </div></a><a class="list-group-item">
-                        <div class="row align-items-center">
-                          <div class="col-auto d-flex">
-                            <div class="project__avatar"><img class="project__img" src="./images/project-3.jpg" alt="avatar"/></div>
-                          </div>
-                          <div class="col project__inner">
-                            <h4 class="project__title">Safari Exploration</h4>
-                            <p class="small text-muted mb-0 project__status">
-                              <time datetime="2018-05-24">Updated 10hr ago</time>
-                            </p>
-                          </div>
-                          <div class="col-auto">
-                            <div class="dropdown"><a class="dropdown-ellipses dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fe fe-more-vertical"></i></a>
-                              <div class="dropdown-menu"><a class="dropdown-item" href="#">Action</a><a class="dropdown-item" href="#">Another action</a><a class="dropdown-item" href="#">Something else here</a>
-                              </div>
+                        </div>
+                      </div>
+                      <hr class="project__devider"/>
+                      <div class="row align-items-center project__item">
+                        <div class="col-auto d-flex"><a class="project__img-link" href="#"><img class="project__img" src="./images/project-3.jpg" alt="avatar"/></a></div>
+                        <div class="col project__inner">
+                          <h4 class="project__title"><a href="#">Safari Exploration</a></h4>
+                          <p class="small text-muted mb-0 project__status">
+                            <time datetime="2018-05-24">Updated 10hr ago</time>
+                          </p>
+                        </div>
+                        <div class="col-auto">
+                          <div class="dropdown project__action-list"><a class="dropdown-ellipses dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fe fe-more-vertical"></i></a>
+                            <div class="dropdown-menu dropdown-menu-right project__dropdown" x-placement="top-end"><a class="dropdown-item" href="#">Action</a><a class="dropdown-item" href="#">Another action</a><a class="dropdown-item" href="#">Something else here</a>
                             </div>
                           </div>
-                        </div></a><a class="list-group-item">
-                        <div class="row align-items-center">
-                          <div class="col-auto d-flex">
-                            <div class="project__avatar"><img class="project__img" src="./images/project-5.jpg" alt="avatar"/></div>
-                          </div>
-                          <div class="col project__inner">
-                            <h4 class="project__title">Personal Site</h4>
-                            <p class="small text-muted mb-0 project__status">
-                              <time datetime="2018-05-24">Updated 4hr ago</time>
-                            </p>
-                          </div>
-                          <div class="col-auto">
-                            <div class="dropdown"><a class="dropdown-ellipses dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fe fe-more-vertical"></i></a>
-                              <div class="dropdown-menu"><a class="dropdown-item" href="#">Action</a><a class="dropdown-item" href="#">Another action</a><a class="dropdown-item" href="#">Something else here</a>
-                              </div>
+                        </div>
+                      </div>
+                      <hr class="project__devider"/>
+                      <div class="row align-items-center project__item">
+                        <div class="col-auto d-flex"><a class="project__img-link" href="#"><img class="project__img" src="./images/project-5.jpg" alt="avatar"/></a></div>
+                        <div class="col project__inner">
+                          <h4 class="project__title"><a href="#">Personal Site</a></h4>
+                          <p class="small text-muted mb-0 project__status">
+                            <time datetime="2018-05-24">Updated 4hr ago</time>
+                          </p>
+                        </div>
+                        <div class="col-auto">
+                          <div class="dropdown project__action-list"><a class="dropdown-ellipses dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fe fe-more-vertical"></i></a>
+                            <div class="dropdown-menu dropdown-menu-right project__dropdown" x-placement="top-end"><a class="dropdown-item" href="#">Action</a><a class="dropdown-item" href="#">Another action</a><a class="dropdown-item" href="#">Something else here</a>
                             </div>
                           </div>
-                        </div></a>
+                        </div>
+                      </div>
+                      <hr class="project__devider"/>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="col-xl-8"></div>
+              <div class="col-xl-8">
+                <div class="card performance">
+                  <div class="card-header">
+                    <div class="d-flex align-items-center">
+                      <h4 class="performance__title">Performance</h4>
+                      <ul class="nav nav-tabs">
+                        <li class="nav-item"><a class="nav-link" href="#">All</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Direct</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Organic</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <div class="chart">
+                      <canvas id="js-performance-chart" width="628" height="300"></canvas>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xl-7">
+                <div class="card goals">
+                  <div class="card-header">
+                    <h4 class="goals__title">Goals</h4><a class="btn btn-default">Export</a>
+                  </div>
+                  <div class="card-body">
+                    <div class="table-responsive">
+                      <table class="table goal-table">
+                        <thead>
+                          <tr>
+                            <th class="js-option-sort" colspan="0"><a class="goal-table__link-sort" href="javascript:void(0)">Goal</a></th>
+                            <th class="js-option-sort" colspan="0"><a class="goal-table__link-sort" href="javascript:void(0)">status</a></th>
+                            <th class="js-option-sort" colspan="0"><a class="goal-table__link-sort" href="javascript:void(0)">progress</a></th>
+                            <th class="js-option-sort" colspan="0"><a class="goal-table__link-sort" href="javascript:void(0)">due date</a></th>
+                            <th class="js-option-sort" colspan="2"><a class="goal-table__link-sort" href="javascript:void(0)">team</a></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td class="goal-table__project">Update the API</td>
+                            <td class="goal-table__status"><span class="status-icon status-icon--progress">In progress</span></td>
+                            <td class="goal-table__progress">55%</td>
+                            <td class="goal-table__deadline">
+                              <time datetime="07/24/18">07/24/18</time>
+                            </td>
+                            <td class="goal-table__team">
+                              <div class="goal-table__avatars"><a class="goal-table__avatar" href="#"><img class="goal-table__img" src="./images/avatar-1.jpg"/></a></div>
+                              <div class="goal-table__avatars"><a class="goal-table__avatar" href="#"><img class="goal-table__img" src="./images/avatar-2.jpg"/></a></div>
+                              <div class="goal-table__avatars"><a class="goal-table__avatar" href="#"><img class="goal-table__img" src="./images/avatar-3.jpg"/></a></div>
+                              <div class="goal-table__avatars"><a class="goal-table__avatar" href="#"><img class="goal-table__img" src="./images/avatar-4.jpg"/></a></div>
+                            </td>
+                            <td>
+                              <div class="dropdown project__action-list"><a class="dropdown-ellipses dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fe fe-more-vertical"></i></a>
+                                <div class="dropdown-menu dropdown-menu-right project__dropdown" x-placement="top-end"><a class="dropdown-item" href="#">Action</a><a class="dropdown-item" href="#">Another action</a><a class="dropdown-item" href="#">Something else here</a>
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="goal-table__project">Release v1.2-Beta</td>
+                            <td class="goal-table__status"><span class="status-icon status-icon--progress">In progress</span></td>
+                            <td class="goal-table__progress">25%</td>
+                            <td class="goal-table__deadline">
+                              <time datetime="08/26/18">08/26/18</time>
+                            </td>
+                            <td class="goal-table__team">
+                              <div class="goal-table__avatars"><a class="goal-table__avatar" href="#"><img class="goal-table__img" src="./images/avatar-1.jpg"/></a></div>
+                              <div class="goal-table__avatars"><a class="goal-table__avatar" href="#"><img class="goal-table__img" src="./images/avatar-2.jpg"/></a></div>
+                              <div class="goal-table__avatars"><a class="goal-table__avatar" href="#"><img class="goal-table__img" src="./images/avatar-3.jpg"/></a></div>
+                            </td>
+                            <td>
+                              <div class="dropdown project__action-list"><a class="dropdown-ellipses dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fe fe-more-vertical"></i></a>
+                                <div class="dropdown-menu dropdown-menu-right project__dropdown" x-placement="top-end"><a class="dropdown-item" href="#">Action</a><a class="dropdown-item" href="#">Another action</a><a class="dropdown-item" href="#">Something else here</a>
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="goal-table__project">GDPR Compliance</td>
+                            <td class="goal-table__status"><span class="status-icon status-icon--complete">Completed</span></td>
+                            <td class="goal-table__progress">100%</td>
+                            <td class="goal-table__deadline">
+                              <time datetime="06/19/18">06/19/18</time>
+                            </td>
+                            <td class="goal-table__team">
+                              <div class="goal-table__avatars"><a class="goal-table__avatar" href="#"><img class="goal-table__img" src="./images/avatar-1.jpg"/></a></div>
+                              <div class="goal-table__avatars"><a class="goal-table__avatar" href="#"><img class="goal-table__img" src="./images/avatar-2.jpg"/></a></div>
+                              <div class="goal-table__avatars"><a class="goal-table__avatar" href="#"><img class="goal-table__img" src="./images/avatar-3.jpg"/></a></div>
+                            </td>
+                            <td>
+                              <div class="dropdown project__action-list"><a class="dropdown-ellipses dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fe fe-more-vertical"></i></a>
+                                <div class="dropdown-menu dropdown-menu-right project__dropdown" x-placement="top-end"><a class="dropdown-item" href="#">Action</a><a class="dropdown-item" href="#">Another action</a><a class="dropdown-item" href="#">Something else here</a>
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="goal-table__project">v1.2 Documentation</td>
+                            <td class="goal-table__status"><span class="status-icon status-icon--cancel">Cancelled</span></td>
+                            <td class="goal-table__progress">0%</td>
+                            <td class="goal-table__deadline">
+                              <time datetime="06/25/18">06/25/18</time>
+                            </td>
+                            <td class="goal-table__team">
+                              <div class="goal-table__avatars"><a class="goal-table__avatar" href="#"><img class="goal-table__img" src="./images/avatar-1.jpg"/></a></div>
+                              <div class="goal-table__avatars"><a class="goal-table__avatar" href="#"><img class="goal-table__img" src="./images/avatar-2.jpg"/></a></div>
+                            </td>
+                            <td>
+                              <div class="dropdown project__action-list"><a class="dropdown-ellipses dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fe fe-more-vertical"></i></a>
+                                <div class="dropdown-menu dropdown-menu-right project__dropdown" x-placement="top-end"><a class="dropdown-item" href="#">Action</a><a class="dropdown-item" href="#">Another action</a><a class="dropdown-item" href="#">Something else here</a>
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="goal-table__project">Plan design offsite</td>
+                            <td class="goal-table__status"><span class="status-icon status-icon--complete">Completed</span></td>
+                            <td class="goal-table__progress">100%</td>
+                            <td class="goal-table__deadline">
+                              <time datetime="06/30/18">06/30/18</time>
+                            </td>
+                            <td class="goal-table__team">
+                              <div class="goal-table__avatars"><a class="goal-table__avatar" href="#"><img class="goal-table__img" src="./images/avatar-1.jpg"/></a></div>
+                              <div class="goal-table__avatars"><a class="goal-table__avatar" href="#"><img class="goal-table__img" src="./images/avatar-2.jpg"/></a></div>
+                              <div class="goal-table__avatars"><a class="goal-table__avatar" href="#"><img class="goal-table__img" src="./images/avatar-3.jpg"/></a></div>
+                              <div class="goal-table__avatars"><a class="goal-table__avatar" href="#"><img class="goal-table__img" src="./images/avatar-4.jpg"/></a></div>
+                            </td>
+                            <td>
+                              <div class="dropdown project__action-list"><a class="dropdown-ellipses dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fe fe-more-vertical"></i></a>
+                                <div class="dropdown-menu dropdown-menu-right project__dropdown" x-placement="top-end"><a class="dropdown-item" href="#">Action</a><a class="dropdown-item" href="#">Another action</a><a class="dropdown-item" href="#">Something else here</a>
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-5">
+                <div class="intro">
+                  <div class="row justify-content-ce">
+                    <div class="col-12 col-xl-10">
+                      <div class="intro__inner"><img src="./images/happiness.svg" alt="intro"/></div>
+                      <h3 class="intro__title">We released 2008 new versions of our theme for glory.</h3>
+                      <p class="intro__content">This is a true story and totally not made up. This is going to be better in the long run but for now this is the way it is.</p>
+                      <div class="intro__action"><a class="btn" href="#"></a></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -663,6 +811,7 @@
   </body>
   <script src="libs/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+  <script src="./libs/popper.min.js"></script>
   <script src="./libs/bootstrap/js/bootstrap.min.js"></script>
   <script src="js/main.js"></script>
 </html>

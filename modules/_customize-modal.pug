@@ -71,13 +71,22 @@ mixin customize-modal()
               .option
                 h4.option__title= val.option
                 p.option__desc= val.desc
-                .option__group
+                .option__group(
+                  data-toggle="buttons"
+                )
                   each item in val.details
-                    .btn.option__item
-                      input.option__input(
-                        type="radio"
-                        checked= item.isChecked ? "checked" : ""
-                      )
+                    label.btn.option__item(
+                      class= item.isChecked ? "active" : ""
+                    )
+                      if item.isChecked
+                        input.option__input(
+                          type="radio"
+                          checked
+                        )
+                      else
+                        input.option__input(
+                          type="radio"
+                        )
                       if item.icon
                         i(class= item.icon)
                       span= item.name

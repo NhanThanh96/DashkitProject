@@ -59,13 +59,8 @@
                             border-color: $cl-light-white;
                             border-radius: 6px;
                             margin-right: 6px;
-                            :last-of-type {
+                            &:last-of-type {
                                 margin-right: 0;
-                            }
-                            &.active {
-                                color: $cl-dark-blue;
-                                border-color: $cl-dark-blue;
-                                background-color: $cl-white;
                             }
                             & > .fe {
                                 margin-right: 6px;
@@ -75,7 +70,7 @@
                                 border-color: darken($cl-light-white, 5%);
                             }
                             &:not(.disabled) {
-                                &:active {
+                                &.active {
                                 background-color: #fff;
                                 border-color: #2c7be5;
                                 color: #2c7be5;

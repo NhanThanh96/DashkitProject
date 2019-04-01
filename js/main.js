@@ -36,7 +36,7 @@ $(document).ready(function(){
 
   // doughtnut chart
   var doughnutEle = $("#js-doughnut-chart");
-  doughnutChart = new Chart(doughnutEle,{
+  var doughnutChart = new Chart(doughnutEle,{
       type: 'doughnut',
       data: {
         labels: ["Desktop", "Tablet", "Mobile"],
@@ -48,4 +48,37 @@ $(document).ready(function(){
     }
     }
   );
+ 
+
+// performance-chart
+var performanceEle = $("#js-performance-chart");
+var performanceChart = new Chart(performanceEle,{
+  type: 'line',
+  data: {
+    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+    datasets: [{
+        label: "Performance",
+        data: [0, 10, 5, 15, 10, 20, 15, 25, 20, 30, 25, 40]
+    }]
+  }
+}
+);
+
+// sort goals table
+
+        $('.js-option-sort').click(function(){
+          var table = $(this).parents('table').eq(0)
+          var rows = table.find('tr:gt(0)').toArray().sort(comparer($(this).index()))
+          this.asc = !this.asc
+          if (!this.asc){rows = rows.reverse()}
+          for (var i = 0; i < rows.length; i++){table.append(rows[i])}
+        })
+      function comparer(index) {
+          return function(a, b) {
+              var valA = getCellValue(a, index), valB = getCellValue(b, index)
+              return $.isNumeric(valA) && $.isNumeric(valB) ? valA - valB : valA.toString().localeCompare(valB)
+          }
+      }
+      function getCellValue(row, index){ return $(row).children('td').eq(index).text() }
+
 });
