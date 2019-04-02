@@ -14,7 +14,7 @@
   &--default {
     color: #283e59;
     background-color: $cl-white;
-    border-color: #e3ebf6;
+    border-color: $cl-light-white;
     &:hover {
       background-color: #f9fbfd;
       border-color: #d2ddec;
@@ -37,7 +37,6 @@
       outline: 0;
     }
   }
-
 }
 
  

@@ -3,23 +3,12 @@
 // //-------------------------------------------------------
 // ==== font-family ====
 $font-family-cerebri-san: "Cerebri Sans",sans-serif;
-// $font-icons
 
 // ==== font-size ==== 
-// $fs-xxlarge
-// $fs-xlarge
-// $fs-large
-// $fs-medium
-// $fs-small
-// $fs-xsmall
-// $fs-xxsmall
+
 
 // ==== line-height ====
-// $lh-xlarge
-// $lh-large
-// $lh-normal
-// $lh-small
-// $lh-xsmall
+
 
 // ==== font-weight ====
 $fw-regular : 400;
@@ -27,41 +16,20 @@ $fw-medium : 500;
 $fw-bold : 600;
 
 // ==== color ====
+$cl-yellow : #f6c343;
+$cl-red : #e63757;
 $cl-white : #fff;
 $cl-light-white : #e3ebf6;
 $cl-gray : #6e84a3;
+$cl-light-gray : #edf2f9;
+$cl-xlight-gray : #95aac9;
 $cl-dark-gray : #12263f;
 $cl-dark-blue : #2c7be5;
+$cl-light-blue : #1657af;
 $cl-green : rgb(0, 217, 126);
 $cl-light-green : #00d97e;
 
-// --indigo: #727cf5;
-// --purple: #6b5eae;
-// --pink: #ff679b;
-// --red: #e63757;
-// --orange: #fd7e14;
-// --yellow: #f6c343;
-// --green: #00d97e;
-// --teal: #02a8b5;
-// --cyan: #39afd1;
-// --gray: #95aac9;
-// --gray-dark: #3b506c;
-// --primary: #2c7be5;
-// --secondary: #6e84a3;
-// --success: #00d97e;
-// --info: #39afd1;
-// --warning: #f6c343;
-// --danger: #e63757;
-// --light: #edf2f9;
-// --dark: #12263f;
-// --white: #fff;
 
-// ==== breakpoint ====
-// --breakpoint-xs: 0;
-// --breakpoint-sm: 576px;
-// --breakpoint-md: 768px;
-// --breakpoint-lg: 992px;
-// --breakpoint-xl: 1200px;
 
 // ==== background color ====
 $bg-body : #f9fbfd;

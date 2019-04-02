@@ -70,11 +70,11 @@ mixin content()
                   .custom-control.ml-auto.custom-switch.orders__switch
                     span.text-muted Show affiliate:
                     label.switch
-                      input(type="checkbox")
+                      input#cardToggle(type="checkbox")
                       span.slider.round
               .card-body
                 .chart
-                  canvas#js-bar-chart(
+                  canvas#ordersChart(
                     width="627"
                     height="300"
                   )
@@ -83,15 +83,15 @@ mixin content()
               .card-header
                 .d-flex.align-items-center
                   h4.devices__title Devices
-                  ul.nav.nav-tabs
+                  ul.nav.devices__nav
                     li.nav-item
-                      a.nav-link(href="#") All
+                      a.nav-link.active(href="#") All
                     li.nav-item
                       a.nav-link(href="#") Direct
               .card-body
                 .chart
                   canvas#js-doughnut-chart(
-                    width="276"
+                    width="277"
                     height="241"
                   )
         .row
@@ -100,7 +100,7 @@ mixin content()
               .card-header
                 .d-flex.align-items-center
                   h4.project__title Projects
-                  a(href="#") View all
+                  a.text-small.project__viewall(href="#") View all
               .card-body
                 .list-group.list-group-flush.project__list
                   -
@@ -162,10 +162,13 @@ mixin content()
               .card-header
                 .d-flex.align-items-center
                   h4.performance__title Performance
-                  ul.nav.nav-tabs
-                    each val, index in ["All", "Direct", "Organic"]
-                      li.nav-item
-                        a.nav-link(href="#")= val
+                  ul.nav.performance__nav
+                    li.nav-item
+                      a.nav-link.active(href="#") All
+                    li.nav-item
+                      a.nav-link(href="#") Direct
+                    li.nav-item
+                      a.nav-link(href="#") Organic
               .card-body
                 .chart
                   canvas#js-performance-chart(
@@ -354,8 +357,8 @@ mixin content()
                                 a.goal-table__avatar(
                                   href=item.memberLink
                                   data-toggle="tooltip"
-                                  title=""
-                                  data-original-title=item.name
+                                  title=item.name
+                                  data-placement="top"
                                   )
                                   img.goal-table__img(src=item.memberImg)
                           td

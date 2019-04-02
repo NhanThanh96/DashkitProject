@@ -329,7 +329,7 @@
   ]
 
 mixin menu({mainMenu})
-  ul.navbar-nav
+  ul.navbar-nav#accordionMainMenu
     each val in mainMenu
       li.nav-item
         if val.secondLevelMenu
@@ -350,8 +350,9 @@ mixin menu({mainMenu})
           .collapse(
             class= val.isShow ? "show" : ""
             id= val.url
+            data-parent="#accordionMainMenu"
           )
-            ul.nav.flex-column
+            ul.nav.flex-column#accordionSecondMenu
               each secondLevel in val.secondLevelMenu
                 li.nav-item
                   if secondLevel.thirdLevelMenu
@@ -364,6 +365,7 @@ mixin menu({mainMenu})
                     )= secondLevel.name
                     .collapse(
                       id= secondLevel.url
+                      data-parent="#accordionSecondMenu"
                     )
                       ul.nav.flex-column
                         each thirdLevel in secondLevel.thirdLevelMenu
