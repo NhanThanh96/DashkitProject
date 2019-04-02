@@ -1,5 +1,4 @@
 @import 'abstracts/variables';
-@import 'abstracts/mixins';
 
 @import 'base/font';
 @import 'base/icon';
@@ -13,7 +12,8 @@
 @import 'component/search-modal';
 @import 'component/notify-modal';
 @import 'component/customize-modal';
-@import 'component/content';
+
+@import 'page/index';
 @import 'component/responsive';
 
 

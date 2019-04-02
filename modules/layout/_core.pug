@@ -1,0 +1,20 @@
+include ../head/_head
+include ../content/_content
+
+include ../_sidebar
+include ../_plugins
+include ../_menu
+include ../_search-modal
+include ../_notify-modal
+include ../_customize-modal
+
+include ../styleguide/_button
+include ../styleguide/_badge
+
+doctype html
+html(lang='en')
+  head
+    block head
+  body
+    block body
+  +plugins()
