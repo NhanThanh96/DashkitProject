@@ -3,16 +3,19 @@
   .collapse:not(.show) {
     display: none;
   }
-  
   .navbar {
- 
+    $self : &;
     .navbar-collapse {
       margin-left: -1rem;
       margin-right: -1rem;
       padding-left: 1rem;
       padding-right: 1rem;
       flex: 1 1 100%;
+      #{$self}__user {
+        display: none;
+      }
     }
+    
     &__vertical {
       &.navbar-expand-md {
         .container-fluid {
@@ -40,6 +43,8 @@
       &.navbar-light {
         max-width: 100%;
         position: static;
+        padding: 12px 16px;
+        overflow: visible;
       }
       border-bottom: 1px solid $cl-light-white;
     }
@@ -49,8 +54,8 @@
       }
       .dropup {
         .dropdown-menu {
-          left: 50%;
-          transform: translateX(-50%);
+          right: 0;
+          left: auto;
           .dropdown-item {
             display: block;
             width: 100%;
@@ -123,8 +128,8 @@
             background-color: transparent;
             color: #95aac9;
             padding-right: 6px;
-            border-top-left-radius: 6px;
-            border-bottom-left-radius: 6px;
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
             border-top-right-radius: 0; 
             border-bottom-right-radius: 0;
             transition: border-color .3s; 
@@ -134,8 +139,8 @@
       &__input {
         border-left: 0;
         padding: 8px 12px 8px 6px;
-        border-top-right-radius: 6px;
-        border-bottom-right-radius: 6px;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
         border-top-left-radius: 0;
         border-bottom-left-radius: 0;
         font-size: 15px;

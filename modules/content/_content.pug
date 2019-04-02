@@ -85,11 +85,11 @@ mixin content()
                   h4.devices__title Devices
                   ul.nav.devices__nav
                     li.nav-item
-                      a.nav-link.active(href="#") All
+                      a.nav-link.active#js-devices-all(href="javascript:void(0)") All
                     li.nav-item
-                      a.nav-link(href="#") Direct
+                      a.nav-link#js-devices-direct(href="javascript:void(0)") Direct
               .card-body
-                .chart
+                .devices-chart
                   canvas#js-doughnut-chart(
                     width="277"
                     height="241"
@@ -163,12 +163,12 @@ mixin content()
                 .d-flex.align-items-center
                   h4.performance__title Performance
                   ul.nav.performance__nav
-                    li.nav-item
-                      a.nav-link.active(href="#") All
-                    li.nav-item
-                      a.nav-link(href="#") Direct
-                    li.nav-item
-                      a.nav-link(href="#") Organic
+                    li.nav-item#js-performance-all
+                      a.nav-link.active(href="javascript:void(0)") All
+                    li.nav-item#js-performance-direct
+                      a.nav-link(href="javascript:void(0)") Direct
+                    li.nav-item#js-performance-organic
+                      a.nav-link(href="javascript:void(0)") Organic
               .card-body
                 .chart
                   canvas#js-performance-chart(

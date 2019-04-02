@@ -188,87 +188,379 @@ $(document).ready(function(){
   });
 
   // doughtnut chart
-  var doughnutEle = $("#js-doughnut-chart");
-  var doughnutChart = new Chart(doughnutEle,{
-      type: 'doughnut',
-      options : {
-        maintainAspectRatio : false,
-        cutoutPercentage: 83,
-        legend: {
-          position : "bottom"
-       },
-      },
-      data: {
-        labels: ["Desktop", "Tablet", "Mobile"],
-        datasets: [{
-            data: [60, 25, 15],
-            backgroundColor: ["#2C7BE5", "#A6C5F7", "#D2DDEC"],
-            // hoverBorderColor: "dark" == ThemeCharts.colorScheme ? ThemeCharts.colors.gray[800] : ThemeCharts.colors.white
-        }]
-    }
-    }
-  );
+
+  // var doughnutEle = $("#js-doughnut-chart");
+  // var doughnutChart = new Chart(doughnutEle,{
+  //     type: 'doughnut',
+      // options : {
+      //   maintainAspectRatio : false,
+      //   cutoutPercentage: 83,
+      //   legend: {
+      //     position : "bottom"
+      //  },
+  //     },
+  //     data: {
+  //       labels: ["Desktop", "Tablet", "Mobile"],
+  //       datasets: [{
+  //           data: [60, 25, 15],
+  //           backgroundColor: ["#2C7BE5", "#A6C5F7", "#D2DDEC"],
+  //       }]
+  //   }
+  //   }
+  // );
  
 
-// performance-chart
-var performanceEle = $("#js-performance-chart");
-var performanceChart = new Chart(performanceEle,{
-  type: 'line',
-  options: {
-    elements: {
-      point:{
-          radius: 0
-      },
-  },
-    legend: {
-      display: false,
+// Doughnut chart
+
+var data = {
+  labels: ["Desktop", "Tablet", "Mobile"],
+  
+  datasets: [{
+    data: [60, 25, 15],
+    backgroundColor: ["#2C7BE5", "#A6C5F7", "#D2DDEC"],
+  }]
+  };
+
+var data1 = {
+  labels: ["Desktop", "Tablet", "Mobile"],
+  
+  datasets: [{
+    data: [15, 45, 20],
+    backgroundColor: ["#2C7BE5", "#A6C5F7", "#D2DDEC"],
+  }]
+  };
+
+var context = document.querySelector('#js-doughnut-chart').getContext('2d');
+new Chart(context, {
+    type: 'doughnut',
+    options : {
+      maintainAspectRatio : false,
+      cutoutPercentage: 83,
+      legend: {
+        position : "bottom"
+     }
     },
-    scales: {
-        yAxes: [{
-            gridLines: {
-              drawBorder: false,
-              borderDash: [2, 2],
-            },
-            ticks: {
-              beginAtZero: true,
-              callback: function(a) {
-                  if (!(a % 10)) return "$" +" " + a + "k"
-              },
-              fontColor: "#a9afb9",
-              scaleFontSize: 20
-            }
-        }],
-        xAxes: [{
-          barPercentage: 0.5,
-          barThickness: 30,
-          maxBarThickness: 10,
-          categoryPercentage: 9,
-          minBarLength: 2,
-          gridLines: {
-            offsetGridLines: false,
-            color: "#fff",
-          },
-          ticks: {
-            fontColor: "#a9afb9",
-            fontFamily: "Cerebri Sans",
-            scaleFontSize: 20,
-            lineDashType: "dash"
-        },
-        }],
-    }
-  },
-  data: {
-    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+    data : data
+});
+  
+$("#js-devices-all").on("click", function() {
+   var context1 = document.querySelector('#js-doughnut-chart').getContext('2d');
+  new Chart(context1, {
+    type: 'doughnut',
+    options : {
+      maintainAspectRatio : false,
+      cutoutPercentage: 83,
+      legend: {
+        position : "bottom"
+     }
+    },
+    data : data
+  });
+});
+$("#js-devices-direct").on("click", function() {
+  var context2 = document.querySelector('#js-doughnut-chart').getContext('2d');
+  new Chart(context2, {
+    type: 'doughnut',
+    options : {
+      maintainAspectRatio : false,
+      cutoutPercentage: 83,
+      legend: {
+        position : "bottom"
+     }
+    },
+    data : data1
+  });
+});
+
+// performance-chart
+// var performanceEle = $("#js-performance-chart");
+// var performanceChart = new Chart(performanceEle,{
+//   type: 'line',
+//   options: {
+//     elements: {
+//       point:{
+//           radius: 0
+//       },
+//   },
+//     legend: {
+//       display: false,
+//     },
+//     scales: {
+//         yAxes: [{
+//             gridLines: {
+//               drawBorder: false,
+//               borderDash: [2, 2],
+//             },
+//             ticks: {
+//               beginAtZero: true,
+//               callback: function(a) {
+//                   if (!(a % 10)) return "$" +" " + a + "k"
+//               },
+//               fontColor: "#a9afb9",
+//               scaleFontSize: 20
+//             }
+//         }],
+//         xAxes: [{
+//           barPercentage: 0.5,
+//           barThickness: 30,
+//           maxBarThickness: 10,
+//           categoryPercentage: 9,
+//           minBarLength: 2,
+//           gridLines: {
+//             offsetGridLines: false,
+//             color: "#fff",
+//           },
+//           ticks: {
+//             fontColor: "#a9afb9",
+//             fontFamily: "Cerebri Sans",
+//             scaleFontSize: 20,
+//             lineDashType: "dash"
+//         },
+//         }],
+//     }
+//   },
+//   data: {
+//     labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+//     datasets: [{
+//         label: "Performance",
+//         fill : false,
+//         borderColor : "#2c7be5",
+//         data: [0, 10, 5, 15, 10, 20, 15, 25, 20, 30, 25, 40]
+//     }]
+//   }
+// }
+// );
+
+// line chart
+var perdata = {
+  labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
     datasets: [{
         label: "Performance",
         fill : false,
         borderColor : "#2c7be5",
         data: [0, 10, 5, 15, 10, 20, 15, 25, 20, 30, 25, 40]
     }]
-  }
-}
-);
+  };
 
+var perdata1 = {
+  labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+    datasets: [{
+        label: "Performance",
+        fill : false,
+        borderColor : "#2c7be5",
+        data: [20, 10, 15, 25, 10, 20, 15, 25, 30, 30, 5, 20]
+    }]
+  };
+
+  var perdata3 = {
+    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+      datasets: [{
+          label: "Performance",
+          fill : false,
+          borderColor : "#2c7be5",
+          data: [10, 20, 45, 15, 30, 20, 35, 45, 20, 40, 15, 20]
+      }]
+    };
+var context = document.querySelector('#js-performance-chart').getContext('2d');
+new Chart(context, {
+    type: 'line',
+    options: {
+      elements: {
+        point:{
+            radius: 0
+        },
+    },
+      legend: {
+        display: false,
+      },
+      scales: {
+          yAxes: [{
+              gridLines: {
+                drawBorder: false,
+                borderDash: [2, 2],
+              },
+              ticks: {
+                beginAtZero: true,
+                callback: function(a) {
+                    if (!(a % 10)) return "$" +" " + a + "k"
+                },
+                fontColor: "#a9afb9",
+                scaleFontSize: 20
+              }
+          }],
+          xAxes: [{
+            barPercentage: 0.5,
+            barThickness: 30,
+            maxBarThickness: 10,
+            categoryPercentage: 9,
+            minBarLength: 2,
+            gridLines: {
+              offsetGridLines: false,
+              color: "#fff",
+            },
+            ticks: {
+              fontColor: "#a9afb9",
+              fontFamily: "Cerebri Sans",
+              scaleFontSize: 20,
+              lineDashType: "dash"
+          },
+          }],
+      }
+    },
+    data : perdata
+});
+  
+$("#js-performance-all").on("click", function() {
+   var context1 = document.querySelector('#js-performance-chart').getContext('2d');
+  new Chart(context1, {
+    type: 'line',
+    options: {
+      elements: {
+        point:{
+            radius: 0
+        },
+    },
+      legend: {
+        display: false,
+      },
+      scales: {
+          yAxes: [{
+              gridLines: {
+                drawBorder: false,
+                borderDash: [2, 2],
+              },
+              ticks: {
+                beginAtZero: true,
+                callback: function(a) {
+                    if (!(a % 10)) return "$" +" " + a + "k"
+                },
+                fontColor: "#a9afb9",
+                scaleFontSize: 20
+              }
+          }],
+          xAxes: [{
+            barPercentage: 0.5,
+            barThickness: 30,
+            maxBarThickness: 10,
+            categoryPercentage: 9,
+            minBarLength: 2,
+            gridLines: {
+              offsetGridLines: false,
+              color: "#fff",
+            },
+            ticks: {
+              fontColor: "#a9afb9",
+              fontFamily: "Cerebri Sans",
+              scaleFontSize: 20,
+              lineDashType: "dash"
+          },
+          }],
+      }
+    },
+    data : perdata
+  });
+});
+$("#js-performance-direct").on("click", function() {
+  var context2 = document.querySelector('#js-performance-chart').getContext('2d');
+  new Chart(context2, {
+    type: 'line',
+    options: {
+      elements: {
+        point:{
+            radius: 0
+        },
+    },
+      legend: {
+        display: false,
+      },
+      scales: {
+          yAxes: [{
+              gridLines: {
+                drawBorder: false,
+                borderDash: [2, 2],
+              },
+              ticks: {
+                beginAtZero: true,
+                callback: function(a) {
+                    if (!(a % 10)) return "$" +" " + a + "k"
+                },
+                fontColor: "#a9afb9",
+                scaleFontSize: 20
+              }
+          }],
+          xAxes: [{
+            barPercentage: 0.5,
+            barThickness: 30,
+            maxBarThickness: 10,
+            categoryPercentage: 9,
+            minBarLength: 2,
+            gridLines: {
+              offsetGridLines: false,
+              color: "#fff",
+            },
+            ticks: {
+              fontColor: "#a9afb9",
+              fontFamily: "Cerebri Sans",
+              scaleFontSize: 20,
+              lineDashType: "dash"
+          },
+          }],
+      }
+    },
+    data : perdata1
+  });
+});
+
+$("#js-performance-organic").on("click", function() {
+  var context2 = document.querySelector('#js-performance-chart').getContext('2d');
+  new Chart(context2, {
+    type: 'line',
+    options: {
+      elements: {
+        point:{
+            radius: 0
+        },
+    },
+      legend: {
+        display: false,
+      },
+      scales: {
+          yAxes: [{
+              gridLines: {
+                drawBorder: false,
+                borderDash: [2, 2],
+              },
+              ticks: {
+                beginAtZero: true,
+                callback: function(a) {
+                    if (!(a % 10)) return "$" +" " + a + "k"
+                },
+                fontColor: "#a9afb9",
+                scaleFontSize: 20
+              }
+          }],
+          xAxes: [{
+            barPercentage: 0.5,
+            barThickness: 30,
+            maxBarThickness: 10,
+            categoryPercentage: 9,
+            minBarLength: 2,
+            gridLines: {
+              offsetGridLines: false,
+              color: "#fff",
+            },
+            ticks: {
+              fontColor: "#a9afb9",
+              fontFamily: "Cerebri Sans",
+              scaleFontSize: 20,
+              lineDashType: "dash"
+          },
+          }],
+      }
+    },
+    data : perdata3
+  });
+});
 // sort goals table
 
         $('.js-option-sort').click(function(){
