@@ -39,7 +39,7 @@
             border-top-left-radius: 0;
             border-bottom-left-radius: 0;
             font-size: 15px;
-            line-height: 22.5px;
+            line-height: 22px;
             transition: border-color .3s;
             &::placeholder {
               color: $cl-xlight-gray;
@@ -91,10 +91,10 @@
             margin-left: -6px;
           }
           &__title {
-            color: #12263f;
+            color: $cl-dark-gray;
             margin-bottom: 3px;
             font-weight: 450;
-            line-height: 16.5px;
+            line-height: 16px;
           }
           &__status {
             font-size: 13px;
@@ -109,7 +109,7 @@
           &__icon {
             display: flex;
             align-items: center;
-            color: #12263f;
+            color: $cl-dark-gray;
             &--online {
               &::before {
                 content: "";

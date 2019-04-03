@@ -6,10 +6,10 @@
   .navbar {
     $self : &;
     .navbar-collapse {
-      margin-left: -1rem;
-      margin-right: -1rem;
-      padding-left: 1rem;
-      padding-right: 1rem;
+      margin-left: -16px;
+      margin-right: -16px;
+      padding-left: 16px;
+      padding-right: 16px;
       flex: 1 1 100%;
       #{$self}__user {
         display: none;
@@ -126,7 +126,7 @@
           order: -1;
           .input-group-text {
             background-color: transparent;
-            color: #95aac9;
+            color: $cl-xlight-gray ;
             padding-right: 6px;
             border-top-left-radius: 20px;
             border-bottom-left-radius: 20px;
@@ -147,13 +147,13 @@
         line-height: 22.5px;
         transition: border-color .3s;
         &::placeholder {
-          color: #95aac9;
+          color: $cl-xlight-gray ;
         }
         &:focus {
-          border-color: #2c7be5;
+          border-color: $cl-dark-blue;
           & ~ [class*=input-group] {
             & > .input-group-text {
-              border-color: #2c7be5;
+              border-color: $cl-dark-blue;
             }
           }                    
         }

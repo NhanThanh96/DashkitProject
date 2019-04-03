@@ -26,18 +26,18 @@
       border-right: 1px solid $cl-light-white;
     }
     &::-webkit-scrollbar-track {
-      -webkit-box-shadow: inset 0 0 6px darken(#f9fbfd, 5%);
+      -webkit-box-shadow: inset 0 0 6px darken($bg-body, 5%);
       border-radius: 10px;
-      background-color: #F5F5F5;
+      background-color: $cl-light-gray;
     }
     &::-webkit-scrollbar {
       width: 12px;
-      background-color: #F5F5F5;
+      background-color: $cl-light-gray;
     }
     &::-webkit-scrollbar-thumb {
       border-radius: 10px;
-      -webkit-box-shadow: inset 0 0 6px darken(#f9fbfd, 20%);
-      background-color: darken(#f9fbfd, 10%);
+      -webkit-box-shadow: inset 0 0 6px darken($bg-body, 20%);
+      background-color: darken($bg-body, 10%);
     }
   }
   .navbar-collapse {
@@ -142,7 +142,7 @@
           background-color: darken($cl-dark-blue, 10%);
         }
         &:focus {
-          box-shadow: 0 0 0 0.15rem rgba(76,143,233,.5);
+          box-shadow: 0 0 0 2.5px rgba(76,143,233,.5);
         }
       }
       .fe {

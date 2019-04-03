@@ -187,29 +187,6 @@ $(document).ready(function(){
     }
   });
 
-  // doughtnut chart
-
-  // var doughnutEle = $("#js-doughnut-chart");
-  // var doughnutChart = new Chart(doughnutEle,{
-  //     type: 'doughnut',
-      // options : {
-      //   maintainAspectRatio : false,
-      //   cutoutPercentage: 83,
-      //   legend: {
-      //     position : "bottom"
-      //  },
-  //     },
-  //     data: {
-  //       labels: ["Desktop", "Tablet", "Mobile"],
-  //       datasets: [{
-  //           data: [60, 25, 15],
-  //           backgroundColor: ["#2C7BE5", "#A6C5F7", "#D2DDEC"],
-  //       }]
-  //   }
-  //   }
-  // );
- 
-
 // Doughnut chart
 
 var data = {
@@ -237,8 +214,8 @@ new Chart(context, {
       maintainAspectRatio : false,
       cutoutPercentage: 83,
       legend: {
-        position : "bottom"
-     }
+        display: false
+     },
     },
     data : data
 });
@@ -251,8 +228,8 @@ $("#js-devices-all").on("click", function() {
       maintainAspectRatio : false,
       cutoutPercentage: 83,
       legend: {
-        position : "bottom"
-     }
+        display: false
+     },
     },
     data : data
   });
@@ -265,71 +242,12 @@ $("#js-devices-direct").on("click", function() {
       maintainAspectRatio : false,
       cutoutPercentage: 83,
       legend: {
-        position : "bottom"
-     }
+        display: false
+     },
     },
     data : data1
   });
 });
-
-// performance-chart
-// var performanceEle = $("#js-performance-chart");
-// var performanceChart = new Chart(performanceEle,{
-//   type: 'line',
-//   options: {
-//     elements: {
-//       point:{
-//           radius: 0
-//       },
-//   },
-//     legend: {
-//       display: false,
-//     },
-//     scales: {
-//         yAxes: [{
-//             gridLines: {
-//               drawBorder: false,
-//               borderDash: [2, 2],
-//             },
-//             ticks: {
-//               beginAtZero: true,
-//               callback: function(a) {
-//                   if (!(a % 10)) return "$" +" " + a + "k"
-//               },
-//               fontColor: "#a9afb9",
-//               scaleFontSize: 20
-//             }
-//         }],
-//         xAxes: [{
-//           barPercentage: 0.5,
-//           barThickness: 30,
-//           maxBarThickness: 10,
-//           categoryPercentage: 9,
-//           minBarLength: 2,
-//           gridLines: {
-//             offsetGridLines: false,
-//             color: "#fff",
-//           },
-//           ticks: {
-//             fontColor: "#a9afb9",
-//             fontFamily: "Cerebri Sans",
-//             scaleFontSize: 20,
-//             lineDashType: "dash"
-//         },
-//         }],
-//     }
-//   },
-//   data: {
-//     labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-//     datasets: [{
-//         label: "Performance",
-//         fill : false,
-//         borderColor : "#2c7be5",
-//         data: [0, 10, 5, 15, 10, 20, 15, 25, 20, 30, 25, 40]
-//     }]
-//   }
-// }
-// );
 
 // line chart
 var perdata = {

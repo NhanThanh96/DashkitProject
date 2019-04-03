@@ -561,9 +561,9 @@
                   <div class="card-header">
                     <div class="d-flex align-items-center">
                       <h4 class="devices__title">Devices</h4>
-                      <ul class="nav devices__nav">
-                        <li class="nav-item"><a class="nav-link active" id="js-devices-all" href="javascript:void(0)">All</a></li>
-                        <li class="nav-item"><a class="nav-link" id="js-devices-direct" href="javascript:void(0)">Direct</a></li>
+                      <ul class="nav nav-tabs devices__nav">
+                        <li class="nav-item"><a class="nav-link active" id="js-devices-all" href="javascript:void(0)" data-toggle="tab">All</a></li>
+                        <li class="nav-item"><a class="nav-link" id="js-devices-direct" href="javascript:void(0)" data-toggle="tab">Direct</a></li>
                       </ul>
                     </div>
                   </div>
@@ -571,6 +571,7 @@
                     <div class="devices-chart">
                       <canvas id="js-doughnut-chart" width="277" height="241"></canvas>
                     </div>
+                    <div class="devices-chart__legend"><span class="devices-chart__item"><i class="devices-chart__icon devices-chart__icon--dark"></i>Desktop</span><span class="devices-chart__item"><i class="devices-chart__icon devices-chart__icon--medium"></i>Tablet</span><span class="devices-chart__item"><i class="devices-chart__icon devices-chart__icon--light"></i>Mobile</span></div>
                   </div>
                 </div>
               </div>
@@ -658,10 +659,10 @@
                   <div class="card-header">
                     <div class="d-flex align-items-center">
                       <h4 class="performance__title">Performance</h4>
-                      <ul class="nav performance__nav">
-                        <li class="nav-item" id="js-performance-all"><a class="nav-link active" href="javascript:void(0)">All</a></li>
-                        <li class="nav-item" id="js-performance-direct"><a class="nav-link" href="javascript:void(0)">Direct</a></li>
-                        <li class="nav-item" id="js-performance-organic"><a class="nav-link" href="javascript:void(0)">Organic</a></li>
+                      <ul class="nav nav-tabs performance__nav">
+                        <li class="nav-item" id="js-performance-all"><a class="nav-link active" href="javascript:void(0)" data-toggle="tab">All</a></li>
+                        <li class="nav-item" id="js-performance-direct"><a class="nav-link" href="javascript:void(0)" data-toggle="tab">Direct</a></li>
+                        <li class="nav-item" id="js-performance-organic"><a class="nav-link" href="javascript:void(0)" data-toggle="tab">Organic</a></li>
                       </ul>
                     </div>
                   </div>

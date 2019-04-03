@@ -83,17 +83,33 @@ mixin content()
               .card-header
                 .d-flex.align-items-center
                   h4.devices__title Devices
-                  ul.nav.devices__nav
+                  ul.nav.nav-tabs.devices__nav
                     li.nav-item
-                      a.nav-link.active#js-devices-all(href="javascript:void(0)") All
+                      a.nav-link.active#js-devices-all(
+                        href="javascript:void(0)"
+                        data-toggle= "tab"
+                        ) All
                     li.nav-item
-                      a.nav-link#js-devices-direct(href="javascript:void(0)") Direct
+                      a.nav-link#js-devices-direct(
+                        href="javascript:void(0)"
+                        data-toggle= "tab"
+                        ) Direct
               .card-body
                 .devices-chart
                   canvas#js-doughnut-chart(
                     width="277"
                     height="241"
                   )
+                .devices-chart__legend
+                  span.devices-chart__item
+                    i.devices-chart__icon.devices-chart__icon--dark
+                    | Desktop
+                  span.devices-chart__item
+                    i.devices-chart__icon.devices-chart__icon--medium
+                    | Tablet
+                  span.devices-chart__item
+                    i.devices-chart__icon.devices-chart__icon--light
+                    | Mobile
         .row
           .col-xl-4
             .card.project
@@ -162,13 +178,22 @@ mixin content()
               .card-header
                 .d-flex.align-items-center
                   h4.performance__title Performance
-                  ul.nav.performance__nav
+                  ul.nav.nav-tabs.performance__nav
                     li.nav-item#js-performance-all
-                      a.nav-link.active(href="javascript:void(0)") All
+                      a.nav-link.active(
+                        href="javascript:void(0)"
+                        data-toggle= "tab"
+                        ) All
                     li.nav-item#js-performance-direct
-                      a.nav-link(href="javascript:void(0)") Direct
+                      a.nav-link(
+                        href="javascript:void(0)"
+                        data-toggle= "tab"
+                        ) Direct
                     li.nav-item#js-performance-organic
-                      a.nav-link(href="javascript:void(0)") Organic
+                      a.nav-link(
+                        href="javascript:void(0)"
+                        data-toggle= "tab"
+                        ) Organic
               .card-body
                 .chart
                   canvas#js-performance-chart(

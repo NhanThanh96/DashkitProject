@@ -9,18 +9,17 @@
     font-size: 13px;
     border-radius: 4px;
     padding: 2px 8px;
-    line-height: 1.75;
+    line-height: calc(7/4);
   }
   &--default {
-    color: #283e59;
+    color: $cl-dark-gray;
     background-color: $cl-white;
     border-color: $cl-light-white;
     &:hover {
-      background-color: #f9fbfd;
-      border-color: #d2ddec;
+      background-color: $bg-body;
     }
     &:focus {
-      box-shadow : 0 0 0 0.15rem rgba(223,226,230,.5);
+      box-shadow : 0 0 0 calc(5px/2) $bs-gray;
       outline: 0;
     }
   }

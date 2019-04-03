@@ -15,33 +15,33 @@
       }
     }
     &::-webkit-scrollbar-track {
-      -webkit-box-shadow: inset 0 0 6px darken(#f9fbfd, 5%);
+      -webkit-box-shadow: inset 0 0 6px darken($bg-body, 5%);
       border-radius: 10px;
-      background-color: #F5F5F5;
+      background-color: $cl-light-gray;
     }
     &::-webkit-scrollbar {
       width: 12px;
-      background-color: #F5F5F5;
+      background-color: $cl-light-gray;
     }
     &::-webkit-scrollbar-thumb {
       border-radius: 10px;
-      -webkit-box-shadow: inset 0 0 6px darken(#f9fbfd, 20%);
-      background-color: darken(#f9fbfd, 10%);
+      -webkit-box-shadow: inset 0 0 6px darken($bg-body, 20%);
+      background-color: darken($bg-body, 10%);
     }
   }
   .modal-header {
     padding: 24px;
     .modal-title {
       font-weight: 500;
-      line-height: 22.5px;
+      line-height: 22px;
       letter-spacing: -0.3px;
     }
     .close {
       margin: -24px -24px -24px auto;
       padding: 24px;
-      color: lighten(#95aac9, 5%);
+      color: lighten($cl-xlight-gray, 5%);
       &:hover {
-        color: #95aac9;
+        color: $cl-xlight-gray;
       }
     }
   }
@@ -56,18 +56,18 @@
   }
   &__info {
     font-size: 13px;
-    color: #95aac9;
+    color: $cl-xlight-gray;
     & > strong {
       font-weight: 600;
-      color: #12263f;
+      color: $cl-dark-gray;
     }
     .text-body {
-      color: #12263f;
+      color: $cl-dark-gray;
       margin-bottom: 16px;
     }
   }
   &__time {
     font-size: 13px;
-    color: #95aac9;
+    color: $cl-xlight-gray;
   }
 }
