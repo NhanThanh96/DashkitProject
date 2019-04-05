@@ -17,5 +17,13 @@
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.2",
     "gulp-watch": "^5.0.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NhanThanh96/DashkitProject.git"
+  },
+  "bugs": {
+    "url": "https://github.com/NhanThanh96/DashkitProject/issues"
+  },
+  "homepage": "https://github.com/NhanThanh96/DashkitProject#readme"
 }

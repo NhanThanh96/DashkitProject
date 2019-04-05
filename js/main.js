@@ -189,311 +189,143 @@ $(document).ready(function(){
 
 // Doughnut chart
 
+var doughnutChart = document.getElementById('js-doughnut-chart');
+var allDataSet =  $('#js-devices-all').attr("data-update");
+var parsedAllDataSet = JSON.parse(allDataSet);
 var data = {
-  labels: ["Desktop", "Tablet", "Mobile"],
-  
-  datasets: [{
-    data: [60, 25, 15],
-    backgroundColor: ["#2C7BE5", "#A6C5F7", "#D2DDEC"],
+    labels: parsedAllDataSet[0].labels,
+    datasets: [{
+      data: parsedAllDataSet[0].data,
+      backgroundColor: parsedAllDataSet[0].backgroundColor,
   }]
-  };
-
-var data1 = {
-  labels: ["Desktop", "Tablet", "Mobile"],
-  
-  datasets: [{
-    data: [15, 45, 20],
-    backgroundColor: ["#2C7BE5", "#A6C5F7", "#D2DDEC"],
-  }]
-  };
-
-var context = document.querySelector('#js-doughnut-chart').getContext('2d');
-new Chart(context, {
-    type: 'doughnut',
-    options : {
-      maintainAspectRatio : false,
-      cutoutPercentage: 83,
-      legend: {
-        display: false
-     },
-    },
-    data : data
-});
-  
-$("#js-devices-all").on("click", function() {
-   var context1 = document.querySelector('#js-doughnut-chart').getContext('2d');
-  new Chart(context1, {
-    type: 'doughnut',
-    options : {
-      maintainAspectRatio : false,
-      cutoutPercentage: 83,
-      legend: {
-        display: false
-     },
-    },
-    data : data
-  });
-});
-$("#js-devices-direct").on("click", function() {
-  var context2 = document.querySelector('#js-doughnut-chart').getContext('2d');
-  new Chart(context2, {
-    type: 'doughnut',
-    options : {
-      maintainAspectRatio : false,
-      cutoutPercentage: 83,
-      legend: {
-        display: false
-     },
-    },
-    data : data1
-  });
+};
+$('#js-devices-all').on('click', function(){
+  var dataUpdate =  $(this).attr("data-update");
+  var parseddataUpdate = JSON.parse(dataUpdate); 
+  myDoughnutChart.data.datasets[0].data = parseddataUpdate[0].data;
+  myDoughnutChart.data.datasets[0].backgroundColor = parseddataUpdate[0].backgroundColor;
+  myDoughnutChart.data.labels = parseddataUpdate[0].labels;
+  myDoughnutChart.update();
 });
 
+$('#js-devices-direct').on('click', function(){
+  var dataDriectUpdate =  $(this).attr("data-update");
+  var parsedDirectUpdate = JSON.parse(dataDriectUpdate); 
+  myDoughnutChart.data.datasets[0].data = parsedDirectUpdate[0].data;
+  myDoughnutChart.data.datasets[0].backgroundColor = parsedDirectUpdate[0].backgroundColor;
+  myDoughnutChart.data.labels = parsedDirectUpdate[0].labels;
+  myDoughnutChart.update();
+});
+
+var option = {
+    maintainAspectRatio : false,
+    cutoutPercentage: 83,
+    legend: {
+      display: false
+  }
+};
+
+var myDoughnutChart = Chart.Doughnut(doughnutChart,{
+	data:data,
+  options:option
+});
 // line chart
-var perdata = {
-  labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-    datasets: [{
-        label: "Performance",
-        fill : false,
-        borderColor : "#2c7be5",
-        data: [0, 10, 5, 15, 10, 20, 15, 25, 20, 30, 25, 40]
-    }]
-  };
+var performanceChart = document.getElementById('js-performance-chart');
+var allPerformanceDataSet =  $('#js-performance-all').attr("data-update");
+var parsedAllPerformanceDataSet = JSON.parse(allPerformanceDataSet);
 
-var perdata1 = {
-  labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-    datasets: [{
-        label: "Performance",
-        fill : false,
-        borderColor : "#2c7be5",
-        data: [20, 10, 15, 25, 10, 20, 15, 25, 30, 30, 5, 20]
-    }]
-  };
+var performanceData = {
+  datasets: [{
+      label: "Performance",
+      fill : false,
+      borderColor : "#2c7be5",
+      data: parsedAllPerformanceDataSet[0].data
+  }],
+  labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+};
 
-  var perdata3 = {
-    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-      datasets: [{
-          label: "Performance",
-          fill : false,
-          borderColor : "#2c7be5",
-          data: [10, 20, 45, 15, 30, 20, 35, 45, 20, 40, 15, 20]
-      }]
-    };
-var context = document.querySelector('#js-performance-chart').getContext('2d');
-new Chart(context, {
-    type: 'line',
-    options: {
-      elements: {
-        point:{
-            radius: 0
-        },
-    },
-      legend: {
-        display: false,
-      },
-      scales: {
-          yAxes: [{
-              gridLines: {
-                drawBorder: false,
-                borderDash: [2, 2],
-              },
-              ticks: {
-                beginAtZero: true,
-                callback: function(a) {
-                    if (!(a % 10)) return "$" +" " + a + "k"
-                },
-                fontColor: "#a9afb9",
-                scaleFontSize: 20
-              }
-          }],
-          xAxes: [{
-            barPercentage: 0.5,
-            barThickness: 30,
-            maxBarThickness: 10,
-            categoryPercentage: 9,
-            minBarLength: 2,
-            gridLines: {
-              offsetGridLines: false,
-              color: "#fff",
-            },
-            ticks: {
-              fontColor: "#a9afb9",
-              fontFamily: "Cerebri Sans",
-              scaleFontSize: 20,
-              lineDashType: "dash"
-          },
-          }],
-      }
-    },
-    data : perdata
-});
-  
-$("#js-performance-all").on("click", function() {
-   var context1 = document.querySelector('#js-performance-chart').getContext('2d');
-  new Chart(context1, {
-    type: 'line',
-    options: {
-      elements: {
-        point:{
-            radius: 0
-        },
-    },
-      legend: {
-        display: false,
-      },
-      scales: {
-          yAxes: [{
-              gridLines: {
-                drawBorder: false,
-                borderDash: [2, 2],
-              },
-              ticks: {
-                beginAtZero: true,
-                callback: function(a) {
-                    if (!(a % 10)) return "$" +" " + a + "k"
-                },
-                fontColor: "#a9afb9",
-                scaleFontSize: 20
-              }
-          }],
-          xAxes: [{
-            barPercentage: 0.5,
-            barThickness: 30,
-            maxBarThickness: 10,
-            categoryPercentage: 9,
-            minBarLength: 2,
-            gridLines: {
-              offsetGridLines: false,
-              color: "#fff",
-            },
-            ticks: {
-              fontColor: "#a9afb9",
-              fontFamily: "Cerebri Sans",
-              scaleFontSize: 20,
-              lineDashType: "dash"
-          },
-          }],
-      }
-    },
-    data : perdata
-  });
-});
-$("#js-performance-direct").on("click", function() {
-  var context2 = document.querySelector('#js-performance-chart').getContext('2d');
-  new Chart(context2, {
-    type: 'line',
-    options: {
-      elements: {
-        point:{
-            radius: 0
-        },
-    },
-      legend: {
-        display: false,
-      },
-      scales: {
-          yAxes: [{
-              gridLines: {
-                drawBorder: false,
-                borderDash: [2, 2],
-              },
-              ticks: {
-                beginAtZero: true,
-                callback: function(a) {
-                    if (!(a % 10)) return "$" +" " + a + "k"
-                },
-                fontColor: "#a9afb9",
-                scaleFontSize: 20
-              }
-          }],
-          xAxes: [{
-            barPercentage: 0.5,
-            barThickness: 30,
-            maxBarThickness: 10,
-            categoryPercentage: 9,
-            minBarLength: 2,
-            gridLines: {
-              offsetGridLines: false,
-              color: "#fff",
-            },
-            ticks: {
-              fontColor: "#a9afb9",
-              fontFamily: "Cerebri Sans",
-              scaleFontSize: 20,
-              lineDashType: "dash"
-          },
-          }],
-      }
-    },
-    data : perdata1
-  });
+$('#js-performance-all').on('click', function(){
+  var dataPerformanceUpdate =  $(this).attr("data-update");
+  var parsedPerformanceDataUpdate = JSON.parse(dataPerformanceUpdate); 
+  myLineChart.data.datasets[0].data = parsedPerformanceDataUpdate[0].data;
+  myLineChart.update();
 });
 
-$("#js-performance-organic").on("click", function() {
-  var context2 = document.querySelector('#js-performance-chart').getContext('2d');
-  new Chart(context2, {
-    type: 'line',
-    options: {
-      elements: {
-        point:{
-            radius: 0
-        },
-    },
-      legend: {
-        display: false,
+$('#js-performance-direct').on('click', function(){
+  var dataPerformanceDriectUpdate =  $(this).attr("data-update");
+  var parsedPerformanceDirectUpdate = JSON.parse(dataPerformanceDriectUpdate); 
+  myLineChart.data.datasets[0].data = parsedPerformanceDirectUpdate[0].data;
+  myLineChart.update();
+});
+
+$('#js-performance-organic').on('click', function(){
+  var dataPerformanceOrganicUpdate =  $(this).attr("data-update");
+  var parsedPerformanceOrganicUpdate = JSON.parse(dataPerformanceOrganicUpdate); 
+  myLineChart.data.datasets[0].data = parsedPerformanceOrganicUpdate[0].data;
+  myLineChart.update();
+});
+
+var myLineChart = Chart.Line(performanceChart, {
+  type: 'line',
+  options: {
+    elements: {
+      point:{
+          radius: 0
       },
-      scales: {
-          yAxes: [{
-              gridLines: {
-                drawBorder: false,
-                borderDash: [2, 2],
-              },
-              ticks: {
-                beginAtZero: true,
-                callback: function(a) {
-                    if (!(a % 10)) return "$" +" " + a + "k"
-                },
-                fontColor: "#a9afb9",
-                scaleFontSize: 20
-              }
-          }],
-          xAxes: [{
-            barPercentage: 0.5,
-            barThickness: 30,
-            maxBarThickness: 10,
-            categoryPercentage: 9,
-            minBarLength: 2,
+  },
+    legend: {
+      display: false,
+    },
+    scales: {
+        yAxes: [{
             gridLines: {
-              offsetGridLines: false,
-              color: "#fff",
+              drawBorder: false,
+              borderDash: [2, 2],
             },
             ticks: {
+              beginAtZero: true,
+              callback: function(a) {
+                  if (!(a % 10)) return "$" +" " + a + "k"
+              },
               fontColor: "#a9afb9",
-              fontFamily: "Cerebri Sans",
-              scaleFontSize: 20,
-              lineDashType: "dash"
+              scaleFontSize: 20
+            }
+        }],
+        xAxes: [{
+          barPercentage: 0.5,
+          barThickness: 30,
+          maxBarThickness: 10,
+          categoryPercentage: 9,
+          minBarLength: 2,
+          gridLines: {
+            offsetGridLines: false,
+            color: "#fff",
           },
-          }],
-      }
-    },
-    data : perdata3
-  });
+          ticks: {
+            fontColor: "#a9afb9",
+            fontFamily: "Cerebri Sans",
+            scaleFontSize: 20,
+            lineDashType: "dash"
+        },
+        }],
+    }
+  },
+  data: performanceData,
 });
+ 
 // sort goals table
-
-        $('.js-option-sort').click(function(){
-          var table = $(this).parents('table').eq(0)
-          var rows = table.find('tr:gt(0)').toArray().sort(comparer($(this).index()))
-          this.asc = !this.asc
-          if (!this.asc){rows = rows.reverse()}
-          for (var i = 0; i < rows.length; i++){table.append(rows[i])}
-        })
-      function comparer(index) {
-          return function(a, b) {
-              var valA = getCellValue(a, index), valB = getCellValue(b, index)
-              return $.isNumeric(valA) && $.isNumeric(valB) ? valA - valB : valA.toString().localeCompare(valB)
-          }
+$('.js-option-sort').click(function(){
+    var table = $(this).parents('table').eq(0)
+    var rows = table.find('tr:gt(0)').toArray().sort(comparer($(this).index()))
+    this.asc = !this.asc
+    if (!this.asc){rows = rows.reverse()}
+    for (var i = 0; i < rows.length; i++){table.append(rows[i])}
+  })
+  function comparer(index) {
+      return function(a, b) {
+          var valA = getCellValue(a, index), valB = getCellValue(b, index)
+          return $.isNumeric(valA) && $.isNumeric(valB) ? valA - valB : valA.toString().localeCompare(valB)
       }
-      function getCellValue(row, index){ return $(row).children('td').eq(index).text() }
-
+  }
+  function getCellValue(row, index){ return $(row).children('td').eq(index).text() }
 });

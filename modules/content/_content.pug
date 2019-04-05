@@ -85,14 +85,32 @@ mixin content()
                   h4.devices__title Devices
                   ul.nav.nav-tabs.devices__nav
                     li.nav-item
+                      -
+                        var allDevicesData = [
+                          {
+                            labels: ["Desktop", "Tablet", "Mobile"],
+                            data: [60, 25, 15],
+                            backgroundColor: ["#2C7BE5", "#A6C5F7", "#D2DDEC"]
+                          }
+                        ]
                       a.nav-link.active#js-devices-all(
                         href="javascript:void(0)"
                         data-toggle= "tab"
+                        data-update= allDevicesData
                         ) All
                     li.nav-item
+                      -
+                        var directDevicesData = [
+                          {
+                            labels: ["Desktop", "Tablet", "Mobile"],
+                            data: [15, 45, 20],
+                            backgroundColor: ["#2C7BE5", "#A6C5F7", "#D2DDEC"]
+                          }
+                        ]
                       a.nav-link#js-devices-direct(
                         href="javascript:void(0)"
                         data-toggle= "tab"
+                        data-update= directDevicesData
                         ) Direct
               .card-body
                 .devices-chart
@@ -179,20 +197,41 @@ mixin content()
                 .d-flex.align-items-center
                   h4.performance__title Performance
                   ul.nav.nav-tabs.performance__nav
-                    li.nav-item#js-performance-all
-                      a.nav-link.active(
+                    li.nav-item
+                      -
+                        var allPerformanceData = [
+                          {
+                            data: [0, 10, 5, 15, 10, 20, 15, 25, 20, 30, 25, 40]
+                          }
+                        ]
+                      a.nav-link.active#js-performance-all(
                         href="javascript:void(0)"
                         data-toggle= "tab"
+                        data-update= allPerformanceData
                         ) All
-                    li.nav-item#js-performance-direct
-                      a.nav-link(
+                    li.nav-item
+                      -
+                        var directPerformanceData = [
+                          {
+                            data: [20, 10, 15, 25, 10, 20, 15, 25, 40, 30, 5, 20]
+                          }
+                        ]
+                      a.nav-link#js-performance-direct(
                         href="javascript:void(0)"
                         data-toggle= "tab"
+                        data-update= directPerformanceData
                         ) Direct
-                    li.nav-item#js-performance-organic
-                      a.nav-link(
+                    li.nav-item
+                      -
+                        var organicPerformanceData = [
+                          {
+                            data: [10, 20, 35, 15, 30, 20, 35, 4, 20, 40, 15, 20]
+                          }
+                        ]
+                      a.nav-link#js-performance-organic(
                         href="javascript:void(0)"
                         data-toggle= "tab"
+                        data-update= organicPerformanceData
                         ) Organic
               .card-body
                 .chart
